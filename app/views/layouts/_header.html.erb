@@ -18,14 +18,16 @@
         </li>
       </ul>
 
-      <ul class="nav navbar-nav navbar-right">
-        <li>
-          <%= link_to 'Sign In', '#' %>
-        </li>
-        <li>
-          <%= link_to 'Create Account', '#' %>
-        </li>
-      </ul>
+          <ul class="nav navbar-nav navbar-right">
+              <% if current_user.present? %>
+                <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+              <% else %>
+                <li><%= link_to "Sign In", new_user_session_path %></li>
+                <li><%= link_to "Create Account", new_user_registration_path %></li>
+              <% end %>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </div>
