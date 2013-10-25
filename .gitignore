@@ -14,4 +14,9 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-/coverage
+
+# Ignore all simplecov log files.
+/coverage/*
+
+# Ignore application configuration
+/config/application.yml
