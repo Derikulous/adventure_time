@@ -1,7 +1,8 @@
 Offerletter::Application.routes.draw do
-  devise_for :users
+  devise_for :users,
+             controllers: {omniauth_callbacks: "omniauth_callbacks"}
 
-  root 'welcome#index'
+  root to: 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
