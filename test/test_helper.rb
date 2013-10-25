@@ -1,6 +1,11 @@
+equire "simplecov"
+SimpleCov.start'rails'
 ENV["RAILS_ENV"] ||= "test"
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
+require "minitest/rails"
+require "capybara/rspec/matchers"
+require "minitest/rails/capybara"
 
 class ActiveSupport::TestCase
   ActiveRecord::Migration.check_pending!
@@ -12,4 +17,10 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+end
+
+class ActionDispatch::IntegrationTest
+  include Rails.application.routes.url_helpers
+  include Capybara::RSpecMatchers
+  include Capybara::DSL
 end
