@@ -35,3 +35,7 @@ Screenshots of your application below:
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
 
+## Resources
+
+1. http://www.micaelwidell.com/p/13/
+2. http://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/098478280X
