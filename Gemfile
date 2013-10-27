@@ -16,6 +16,7 @@ gem 'anjlab-bootstrap-rails', require: 'bootstrap-rails',
 gem 'omniauth'
 gem 'omniauth-github'
 gem 'figaro'
+gem 'cancan'
 
 
 group :doc do
