@@ -4510,6 +4510,15 @@ textarea.input-group-sm > .input-group-btn > .btn {
   border-width: 0 0 1px;
 }
 
+.footer {
+  background-color: white;
+  height: 100px;
+}
+
+.col-md-4 li:first-child {
+  text-decoration: underline;
+}
+
 @media (min-width: 768px) {
   .navbar-fixed-top,
   .navbar-fixed-bottom {
