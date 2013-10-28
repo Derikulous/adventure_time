@@ -42,6 +42,12 @@ audio:not([controls]) {
   height: 0;
 }
 
+.gravatar {
+    border-radius: 50%;
+    width: 100px;
+    float: left;
+}
+
 [hidden] {
   display: none;
 }
