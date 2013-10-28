@@ -4510,6 +4510,23 @@ textarea.input-group-sm > .input-group-btn > .btn {
   border-width: 0 0 1px;
 }
 
+.footer {
+  background-color: white;
+  height: 100px;
+  background-image: url("footer.png");
+  background-position: center;
+  background-size: 100px 100px;
+  background-repeat: no-repeat;
+}
+
+.col-md-2 div:first-child {
+  padding-top: 10px;
+}
+
+.col-md-offset-8 {
+  margin-top: -108px;
+  text-align: justify;
+}
 @media (min-width: 768px) {
   .navbar-fixed-top,
   .navbar-fixed-bottom {
