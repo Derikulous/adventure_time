@@ -10,10 +10,11 @@ feature "visitor tests for offerletter" do
     page.text.must_include 'OfferLetter'
 
   end
+
   scenario "visitor visits main splash page" do
 
     #navigate to about page
-    visit abouts_path
+    visit about_path
 
     # page must have title
     page.text.must_include 'OfferLetter is a'

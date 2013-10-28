@@ -1,26 +1,12 @@
-<<<<<<< HEAD
 one:
-  email: Derik@whyme.com
-  encrypted_password: <%= User.new.send(:password_digest, 'password0') %>
+  email: user@example.com
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
 
 two:
-  email: James@tired.com
+  email: james@tired.com
   encrypted_password: <%= User.new.send(:password_digest, 'password1') %>
 
 three:
-  email: Thanh@businessallday.com
+  email: thanh@businessallday.com
   encrypted_password: <%= User.new.send(:password_digest, 'password2') %>
-=======
-# Read about fixtures at
-# http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-# This model initially had no columns defined.  If you add columns to the
-# model remove the '{}' from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-#  column: value
->>>>>>> devise
