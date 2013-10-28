@@ -15,9 +15,9 @@ gem 'anjlab-bootstrap-rails', require: 'bootstrap-rails',
                               branch: '3.0.0'
 gem 'omniauth'
 gem 'omniauth-github'
+gem 'omniauth-linkedin'
 gem 'figaro'
 gem 'cancan'
-
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

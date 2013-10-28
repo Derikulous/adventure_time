@@ -9,13 +9,13 @@ class User < ActiveRecord::Base
       user.provider = auth.provider
       user.uid = auth.uid
       user.name = auth.info.nickname
-      user.email = "#{user.name}-CHANGEME@github.example.com"
+      user.email = auth.info.email
     end
   end
 
   def self.new_with_session(params, session)
     if session["devise.user_attributes"]
-      new(session["devise.user_attributes"], without_protection: true) do |user|
+      new session["devise.user_attributes"] do |user|
         user.attributes = params
         user.valid?
       end

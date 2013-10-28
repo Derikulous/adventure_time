@@ -1,7 +1,7 @@
 require 'test_helper'
 
-feature 'As a site visitor, I want to be able to sign up to use the site by creating an account'
-  scenario 'Sign up'
+feature 'As a site visitor, I want to be able to sign up to use the site by creating an account' do
+  scenario 'Sign up' do
 
     # Given a registration form
     visit root_path
