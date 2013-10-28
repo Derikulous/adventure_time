@@ -19,6 +19,7 @@ gem 'omniauth-linkedin'
 gem 'figaro'
 gem 'cancan'
 gem 'formtastic'
+gem 'high_voltage'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
