@@ -11,19 +11,20 @@
     </div>
   <% end %>
 
-  <div class="field col-lg-4">
+<div class="well col-lg-4">
+  <div>
     <%= f.label :name %><br />
     <%= f.text_field :name, :class => "form-control", :placeholder => "Abraham Lincoln" %>
   </div>
-  <div class="field col-lg-4">
+  <div>
     <%= f.label :email %><br />
     <%= f.text_field :email, :class => "form-control", :placeholder => "abegoesham@gmail.com" %>
+  </div>
   </br>
     <div>
     <%= f.submit "Update", :class => 'btn btn-primary' %>
   </div>
-  </div>
-
+</div>
 
 <% end %>
 
