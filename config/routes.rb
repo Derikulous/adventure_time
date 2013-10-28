@@ -4,7 +4,7 @@ Offerletter::Application.routes.draw do
 
   root to: 'welcome#index'
 
-  get 'users/:id' => 'users#show'
+ resources :users
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
