@@ -10,8 +10,15 @@
     </div>
     <div class="navbar-collapse collapse" id="navbar-main">
       <ul class="nav navbar-nav">
-        <li><%= link_to 'Learn', '#' %></li>
-        <li><%= link_to 'Practice', '#' %></li>
+        <li>
+          <%= link_to 'Learn', '#' %>
+        </li>
+        <li>
+          <%= link_to 'Practice', '#' %>
+        </li>
+        <li>
+          <%= link_to 'About', page_path('about') %>
+        </li>
       </ul>
         <ul class="nav navbar-nav navbar-right">
           <% if current_user.present? %>
