@@ -11,7 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131025222040) do
+ActiveRecord::Schema.define(version: 20131029203531) do
+
+  create_table "questions", force: true do |t|
+    t.string   "title"
+    t.string   "answer"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "test_id"
+  end
+
+  create_table "tests", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "type"
+    t.integer  "difficulty"
+    t.boolean  "random"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
