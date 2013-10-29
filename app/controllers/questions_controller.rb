@@ -6,6 +6,11 @@ class QuestionsController < ApplicationController
   # GET /questions.json
   def index
     @questions = @test.questions.all
+    if false
+      render 'index'
+    else
+      render 'test'
+    end
   end
 
   # GET /questions/1
@@ -45,7 +50,7 @@ class QuestionsController < ApplicationController
 
     respond_to do |format|
       if @question.update(question_params)
-        format.html { redirect_to @question, notice: 'Question was successfully updated.' }
+        format.html { redirect_to [@test, @question], notice: 'Question was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -74,7 +79,7 @@ class QuestionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def question_params
-      params.require(:question).permit(:title, :answer, test_attributes:
+      params.require(:question).permit(:title, :answer_one, :answer_two, :answer_three, :answer_four, :answer_five, :correct_answer, test_attributes:
                                                         [:test_id])
     end
 

@@ -6,8 +6,13 @@
 </p>
 
 <p>
-  <strong>Answer:</strong>
-  <%= @question.answer %>
+  <strong>Choices:</strong><br />
+  1) <%= @question.answer_one %><br />
+  2) <%= @question.answer_two %><br />
+  3) <%= @question.answer_three %><br />
+  4) <%= @question.answer_four %><br />
+  5) <%= @question.answer_five %><br />
+  Correct Answer: <%= @question.correct_answer %>
 </p>
 
 <%= link_to 'Edit', edit_test_question_path(@test, @question) %> |
