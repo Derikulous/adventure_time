@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Test:</strong>
+  <%= @report_card.test_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @report_card.user_id %>
+</p>
+
+<p>
+  <strong>Grade:</strong>
+  <%= @report_card.grade %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @report_card.name %>
+</p>
+
+<p>
+  <strong>Finished:</strong>
+  <%= @report_card.finished %>
+</p>
+
+<p>
+  <strong>Current question:</strong>
+  <%= @report_card.current_question %>
+</p>
+
+<%= link_to 'Edit', edit_report_card_path(@report_card) %> |
+<%= link_to 'Back', report_cards_path %>

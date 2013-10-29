@@ -13,6 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20131029213938) do
 
+
   create_table "questions", force: true do |t|
     t.string   "title"
     t.datetime "created_at"
@@ -24,6 +25,17 @@ ActiveRecord::Schema.define(version: 20131029213938) do
     t.string   "answer_four"
     t.string   "answer_five"
     t.integer  "correct_answer"
+  end
+
+  create_table "report_cards", force: true do |t|
+    t.integer  "test_id"
+    t.integer  "user_id"
+    t.float    "grade"
+    t.string   "name"
+    t.boolean  "finished"
+    t.integer  "current_question"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "tests", force: true do |t|
