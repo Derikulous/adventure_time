@@ -20,6 +20,7 @@ gem 'figaro'
 gem 'cancan'
 gem 'formtastic'
 gem 'high_voltage'
+gem 'pry-rails'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -31,7 +32,7 @@ group :developemnt, :test do
   gem 'simplecov', require: false
   gem 'launchy'
   gem 'turn'
-  gem 'pry-rails'
+
 end
 
 group :production do

@@ -1,4 +1,10 @@
 Offerletter::Application.routes.draw do
+
+
+  resources :tests do
+    resources :questions
+  end
+
   devise_for :users,
              controllers: {omniauth_callbacks: "omniauth_callbacks"}
 
