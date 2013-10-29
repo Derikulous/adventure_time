@@ -29,7 +29,6 @@ class QuestionsController < ApplicationController
 
     respond_to do |format|
       if @question.save
-        binding.pry
         format.html { redirect_to [@test, @question], notice: 'Question was successfully created.' }
         format.json { render action: 'show', status: :created, location: @question }
       else
