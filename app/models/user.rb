@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :report_cards
+  has_many :tests, through: :report_cards
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :omniauthable,
