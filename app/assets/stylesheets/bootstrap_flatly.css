@@ -324,9 +324,9 @@ body {
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 15px;
   line-height: 1.428571429;
-  color: #ffffff;
+  color: #111111;
   background-color: #404040;
-}r
+}
 
 input,
 button,
@@ -4510,7 +4510,10 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .footer {
   background-color: white;
-  height: 100px;
+  height: 130px;
+}
+
+.footer-image {
   background-image: url("footer.png");
   background-position: center;
   background-size: 100px 100px;
@@ -5707,6 +5710,7 @@ a.list-group-item:focus {
 }
 
 .panel {
+  margin-top: 10px;
   margin-bottom: 21px;
   background-color: #ffffff;
   border: 1px solid transparent;
@@ -5716,7 +5720,7 @@ a.list-group-item:focus {
 }
 
 .panel-body {
-  padding: 15px;
+  padding: 10px;
 }
 
 .panel-body:before,
