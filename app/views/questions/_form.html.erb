@@ -1,7 +1,12 @@
 <%= semantic_form_for [@test, @question] do |f| %>
   <%= f.inputs do %>
     <%= f.input :title %>
-    <%= f.input :answer %>
+    <%= f.input :answer_one %>
+    <%= f.input :answer_two %>
+    <%= f.input :answer_three %>
+    <%= f.input :answer_four %>
+    <%= f.input :answer_five %>
+    <%= f.select :correct_answer, ["1", "2", "3", "4", "5"] %>
   <% end %>
 
   <%= f.actions do %>
