@@ -6,7 +6,4 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-@admin = User.create(email: "jamesthanhderik@example.com", password: "offermeajob", password_confirmation: "offermeajob", role: "admin" )
-@test = Test.create(name: 'Hello Rails',
-                    description: 'What is a hash?',
-                    topic: 'Technical Questions')
+@admin = User.create(email: "jamesthanhderik@example.com", password: "offermeajob", password_confirmation: "offermeajob", role: "admin")
