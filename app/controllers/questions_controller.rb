@@ -31,6 +31,7 @@ class QuestionsController < ApplicationController
   # POST /questions.json
   def create
     @question = @test.questions.new(question_params)
+    authorize @question
 
     respond_to do |format|
       if @question.save

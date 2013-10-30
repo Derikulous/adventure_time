@@ -15,5 +15,8 @@
   Correct Answer: <%= @question.correct_answer %>
 </p>
 
+<% if policy(@question).update? %>
 <%= link_to 'Edit', edit_test_question_path(@test, @question) %> |
+<% end %>
+
 <%= link_to 'Back', test_questions_path(@test) %>

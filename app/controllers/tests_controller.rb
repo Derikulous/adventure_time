@@ -25,6 +25,7 @@ class TestsController < ApplicationController
   # POST /tests.json
   def create
     @test = Test.new(test_params)
+    authorize @test
 
     respond_to do |format|
       if @test.save
