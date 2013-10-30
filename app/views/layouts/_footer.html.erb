@@ -1,32 +1,24 @@
-<footer class="navbar navbar-fixed-bottom footer">
+<div class="navbar navbar-default navbar-fixed-bottom">
   <div class="container footer-image">
-    <div class="row">
-      <div class="col-md-2">
-        <div class="list group">
-          <a class="list-group-item" <%= link_to 'Create an Account', new_user_session_path %></a>
-          <a class="list-group-item" <%= link_to 'Privacy Policy', "#" %></a>
-        </div>
-      </div>
-      <div class="col-md-2">
-        <div class="list-group">
-          <a class="list-group-item" <%= link_to 'Contact Us', "#" %></a>
-          <a class="list-group-item" <%= link_to 'About', page_path('about') %></a>
-        </div>
-      </div>
-      <div class="col-md-4 col-md-offset-8">
-        <div class="list-group">
-          <div class="panel panel-success">
-            <div class="panel-heading">
-              <h2 class="panel-title">
-                <%= link_to 'Offer Letter', root_path %>
-              </h2>
-            </div>
-            <div class="panel-body">
-              Technical interview prep through coding challenges, interview preparation, and progress updates.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <ul class="nav navbar-nav">
+      <li>
+        <%= link_to 'Contact', '#' %>
+      </li>
+      <li>
+        <%= link_to 'About', page_path('about') %>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav pull-right">
+      <li>
+        <%= link_to 'Made in Seattle', id:"footer-made" %>
+      </li>
+      <li>
+        <%= link_to '© 2013 OfferLetter', id:"footer-copy" %>
+      </li>
+    </ul>
   </div>
-</footer>
+</div>
+
+
+
+

@@ -48,6 +48,17 @@ audio:not([controls]) {
     float: left;
 }
 
+.navbar-nav > li > .btn-clear {
+  background: transparent;
+  border: 1px solid #cccccc;
+  margin-top: 9px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin-right: 10px;
+}
+
 [hidden] {
   display: none;
 }
@@ -83,6 +94,7 @@ abbr[title] {
 b,
 strong {
   font-weight: bold;
+  color: #255e8e;
 }
 
 dfn {
@@ -2132,7 +2144,6 @@ textarea.input-lg {
   white-space: nowrap;
   vertical-align: middle;
   cursor: pointer;
-  border: 1px solid transparent;
   border-radius: 4px;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -2215,8 +2226,8 @@ fieldset[disabled] .btn-default.active {
 
 .btn-primary {
   color: #ffffff;
-  background-color: #2c3e50;
-  border-color: #2c3e50;
+  background-color: #3379ce;
+  border-color: transparent;
 }
 
 .btn-primary:hover,
@@ -4514,9 +4525,26 @@ textarea.input-group-sm > .input-group-btn > .btn {
   }
 }
 
-.navbar-fixed-top,
-.navbar-fixed-bottom {
+.navbar-fixed-top {
   position: fixed;
+  padding: 12px 0px 12px 0px;
+  right: 0;
+  left: 0;
+  border-width: 0 0 1px;
+}
+
+#footer-made {
+  border-right: 1px solid #818181;
+  padding-right: 10px;
+}
+
+#footer-copy {
+  padding-left: 10px;
+}
+
+.navbar-fixed-bottom {
+  position: absolute;
+  padding: 15px 0px 15px 0px;
   right: 0;
   left: 0;
   border-width: 0 0 1px;
@@ -4647,6 +4675,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
   .navbar-nav > li {
     float: left;
   }
+
   .navbar-nav > li > a {
     padding-top: 19.5px;
     padding-bottom: 19.5px;
@@ -4752,17 +4781,17 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-default {
-  background-color: #3379ce;
+  background-color: #FFFFFF;
   border-color: transparent;
 }
 
 .navbar-default .navbar-brand {
-  color: #ffffff;
+  color: #818181;
 }
 
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
-  color: #255e8e;
+  color: #000000;
   background-color: transparent;
 }
 
@@ -4771,12 +4800,28 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-default .navbar-nav > li > a {
+  color: #818181;
+}
+
+.navbar-default .navbar-nav > .create-account > a {
   color: #ffffff;
+  margin-top: 9px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  margin-left: 10px;
+  border: transparent;
+}
+
+.navbar-default .navbar-nav > li > .btn-primary:hover {
+  color: #ffffff;
+  background-color: #255e8e;
 }
 
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: #255e8e;
+  color: none;
   background-color: transparent;
 }
 
