@@ -6,8 +6,6 @@ Offerletter::Application.routes.draw do
     resources :questions
   end
 
-  get 'tests/:id/questions', to: 'report_cards#index', as: :report
-
   devise_for :users,
              controllers: {omniauth_callbacks: "omniauth_callbacks"}
 
