@@ -25,5 +25,8 @@
   <%= @test.random %>
 </p>
 
+<% if policy(@test).update? %>
 <%= link_to 'Edit', edit_test_path(@test) %> |
+<% end %>
+
 <%= link_to 'Back', tests_path %>
