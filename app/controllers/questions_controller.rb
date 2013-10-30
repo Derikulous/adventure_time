@@ -22,6 +22,7 @@ class QuestionsController < ApplicationController
   # GET /questions/new
   def new
     @question = @test.questions.new
+    authorize @question
   end
 
   # GET /questions/1/edit
@@ -32,7 +33,6 @@ class QuestionsController < ApplicationController
   # POST /questions.json
   def create
     @question = @test.questions.new(question_params)
-    authorize @question
 
     respond_to do |format|
       if @question.save
@@ -48,6 +48,7 @@ class QuestionsController < ApplicationController
   # PATCH/PUT /questions/1
   # PATCH/PUT /questions/1.json
   def update
+    authorize @question
     @question = @test.questions.find(params[:id])
 
     respond_to do |format|
@@ -82,10 +83,10 @@ class QuestionsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def question_params
       params.require(:question).permit(:title, :answer_one, :answer_two, :answer_three, :answer_four, :answer_five, :correct_answer, test_attributes:
-                                                        [:test_id])
+        [:test_id])
     end
 
     def load_test
       @test = Test.find(params[:test_id])
     end
-end
+  end
