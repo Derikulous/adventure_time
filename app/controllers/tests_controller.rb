@@ -15,6 +15,7 @@ class TestsController < ApplicationController
   # GET /tests/new
   def new
     @test = Test.new
+    authorize @test
   end
 
   # GET /tests/1/edit
@@ -26,7 +27,6 @@ class TestsController < ApplicationController
   def create
     @test = Test.new(test_params)
     authorize @test
-
     respond_to do |format|
       if @test.save
         format.html { redirect_to @test, notice: 'Test was successfully created.' }
@@ -41,6 +41,7 @@ class TestsController < ApplicationController
   # PATCH/PUT /tests/1
   # PATCH/PUT /tests/1.json
   def update
+    authorize @test
     respond_to do |format|
       if @test.update(test_params)
         format.html { redirect_to @test, notice: 'Test was successfully updated.' }
@@ -55,6 +56,7 @@ class TestsController < ApplicationController
   # DELETE /tests/1
   # DELETE /tests/1.json
   def destroy
+    authorize @test
     @test.destroy
     respond_to do |format|
       format.html { redirect_to tests_url }
@@ -71,6 +73,6 @@ class TestsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def test_params
       params.require(:test).permit(:name, :description, :topic, :difficulty, :random, question_attributes:
-                                                        [:title, :answer])
+        [:title, :answer])
     end
-end
+  end

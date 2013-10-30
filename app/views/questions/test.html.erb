@@ -1,6 +1,8 @@
-<h1><%= @test.name %></h1>
-<% @questions.each do |question| %>
-  <p><b>Question</b>: <%= question.title %></p>
+<%= form_tag("report_cards_path", method: "get") do %>
 
 
+  <h1><%= @test.name %></h1>
+  <%= render 'testform' %>
+
+  <%= submit_tag("Submit") %>
 <% end %>

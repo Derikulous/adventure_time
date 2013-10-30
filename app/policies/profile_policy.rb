@@ -18,7 +18,7 @@ class ProfilePolicy < ApplicationPolicy
   alias_method :update?, :create?
 
   def destroy?
-    profile.authored_by?(user) || user.admin? if user.present?
+    user.admin? if user.present?
   end
 
   Scope = Struct.new(:user, :scope) do

@@ -23,6 +23,9 @@
             <li><%= link_to "Report Card", report_cards_path %></li>
             <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
             <li class="divider"></li>
+            <% if current_user.admin? %>
+            <li><%= link_to 'Create Test', new_test_path %></li>
+            <% end %>
             <li><%= link_to "Help", '#' %></li>
           </ul>
         </li>

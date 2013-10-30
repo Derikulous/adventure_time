@@ -1,0 +1,10 @@
+<% @questions.each_with_index do |question, index| %>
+  <p><b>Question</b>: <%= question.title %></p>
+  <p><% answer = Array.new %>
+    <%= radio_button_tag "answer[question#{index}][]", 1 %> <%= question.answer_one %><br />
+    <%= radio_button_tag "answer[question#{index}][]", 2 %> <%= question.answer_two %><br />
+    <%= radio_button_tag "answer[question#{index}][]", 3 %> <%= question.answer_three %><br />
+    <%= radio_button_tag "answer[question#{index}][]", 4 %> <%= question.answer_four %><br />
+    <%= radio_button_tag "answer[question#{index}][]", 5 %> <%= question.answer_five %><br />
+  </p>
+<% end %>

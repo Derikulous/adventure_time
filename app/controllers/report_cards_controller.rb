@@ -71,4 +71,4 @@ class ReportCardsController < ApplicationController
     def report_card_params
       params.require(:report_card).permit(:test_id, :user_id, :grade, :name, :finished, :current_question)
     end
-end
+  end
