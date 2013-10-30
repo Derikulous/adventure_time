@@ -22,7 +22,7 @@
       <td><%= test.topic %></td>
       <td><%= test.difficulty %></td>
       <td><%= test.random %></td>
-      <td><%= link_to 'Show', test, class: "btn btn-success" %></td>
+      <td><%= link_to 'Show', test, class: "btn btn-default" %></td>
       <% if policy(test).update? %>
       <td><%= link_to 'Edit Test', edit_test_path(test), class: "btn btn-primary" %></td>
       <% end %>

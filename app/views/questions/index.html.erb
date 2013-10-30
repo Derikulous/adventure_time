@@ -14,7 +14,7 @@
     <% @questions.each do |question| %>
     <tr>
       <td><%= question.title %></td>
-      <td><%= link_to 'Show', test_question_path(@test, question) %></td>
+      <td><%= link_to 'Show', test_question_path(@test, question), class: "btn btn-default" %></td>
       <% if policy(question).update? %>
       <td><%= link_to 'Edit', edit_test_question_path(@test, question), class: "btn btn-primary" %></td>
       <% end %>
