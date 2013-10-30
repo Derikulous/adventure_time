@@ -29,7 +29,6 @@ feature "As a user, I want to sign in to the app so that I can access my content
         info: { nickname: 'test_linkedin_user'},
         })
       click_on "Sign in with Linkedin"
-      save_and_open_page
       page.must_have_content "test_Linkedin_user, you are signed in!"
     end
 
