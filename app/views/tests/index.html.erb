@@ -36,6 +36,6 @@
 
 <br>
 
-<% if current_user.admin.present? %>
-<%= link_to 'New Test', new_test_path, class: "btn btn-default" %>
+<% if current_user.admin? %>
+  <%= link_to 'New Test', new_test_path, class: "btn btn-default" %>
 <% end %>

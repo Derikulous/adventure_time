@@ -18,7 +18,7 @@ class TestPolicy < ApplicationPolicy
   alias_method :update?, :create?
 
   def destroy?
-    test.authored_by?(user) || user.admin? if user.present?
+    user.admin? if user.present?
   end
 
   Scope = Struct.new(:user, :scope) do

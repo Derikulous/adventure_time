@@ -6,9 +6,10 @@ class QuestionsController < ApplicationController
   # GET /questions.json
   def index
     @questions = @test.questions.all
-    if false
+    if current_user.admin?
       render 'index'
     else
+      @report_card = ReportCard.new
       render 'test'
     end
   end
