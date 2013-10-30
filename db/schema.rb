@@ -11,14 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131029215135) do
+ActiveRecord::Schema.define(version: 20131029234633) do
 
   create_table "questions", force: true do |t|
     t.string   "title"
-    t.string   "answer"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "test_id"
+    t.string   "answer_one"
+    t.string   "answer_two"
+    t.string   "answer_three"
+    t.string   "answer_four"
+    t.string   "answer_five"
+    t.integer  "correct_answer"
   end
 
   create_table "report_cards", force: true do |t|
@@ -58,6 +63,7 @@ ActiveRecord::Schema.define(version: 20131029215135) do
     t.string   "provider"
     t.string   "uid"
     t.string   "name"
+    t.string   "role"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

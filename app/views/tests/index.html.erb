@@ -16,20 +16,26 @@
 
   <tbody>
     <% @tests.each do |test| %>
-      <tr>
-        <td><%= test.name %></td>
-        <td><%= test.description %></td>
-        <td><%= test.topic %></td>
-        <td><%= test.difficulty %></td>
-        <td><%= test.random %></td>
-        <td><%= link_to 'Show', test %></td>
-        <td><%= link_to 'Edit', edit_test_path(test) %></td>
-        <td><%= link_to 'Destroy', test, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <tr>
+      <td><%= test.name %></td>
+      <td><%= test.description %></td>
+      <td><%= test.topic %></td>
+      <td><%= test.difficulty %></td>
+      <td><%= test.random %></td>
+      <td><%= link_to 'Show', test %></td>
+      <% if policy(test).update? %>
+      <td><%= link_to 'Edit', edit_test_path(test) %></td>
+      <% end %>
+      <% if policy(test).destroy? %>
+      <td><%= link_to 'Destroy', test, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+      <% end %>
+    </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Test', new_test_path %>
+<% if current_user.admin? %>
+  <%= link_to 'New Test', new_test_path, class: "btn btn-default" %>
+<% end %>
