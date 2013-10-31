@@ -22,7 +22,7 @@ class TestsController < ApplicationController
     end
 
     unless current_user.try(:admin?)
-      flash[:alert] = "Not authorized to view this page. Goodbye."
+      flash[:alert] = "You are not authorized to view this page."
       redirect_to root_path
     end
   end

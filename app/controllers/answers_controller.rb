@@ -16,6 +16,10 @@ class AnswersController < ApplicationController
   # GET /answers/new
   def new
     @answer = Answer.new
+    unless current_user.try(:admin?)
+      flash[:alert] = "You are not authorized to view this page."
+      redirect_to root_path
+    end
   end
 
   # GET /answers/1/edit
@@ -72,4 +76,4 @@ class AnswersController < ApplicationController
     def answer_params
       params.require(:answer).permit(:question_id, :content)
     end
-end
+  end
