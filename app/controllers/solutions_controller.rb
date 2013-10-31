@@ -1,4 +1,5 @@
 class SolutionsController < ApplicationController
+  before_filter :authenticate_user!, except: [:index, :show]
 
   def index
     @question = Question.find(params[:question_id])
@@ -8,7 +9,6 @@ class SolutionsController < ApplicationController
   def show
     @question = Question.find(params[:question_id])
     @solution = @question.solutions.find(params[:id])
-    binding.pry
   end
 
   def new

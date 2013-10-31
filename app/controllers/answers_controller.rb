@@ -1,5 +1,6 @@
 class AnswersController < ApplicationController
   before_action :set_answer, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!, except: [:index, :show]
 
   # GET /answers
   # GET /answers.json
@@ -24,7 +25,6 @@ class AnswersController < ApplicationController
   # POST /answers
   # POST /answers.json
   def create
-    binding.pry
     @answer = Answer.new(answer_params)
 
     respond_to do |format|
