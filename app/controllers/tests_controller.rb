@@ -10,12 +10,6 @@ class TestsController < ApplicationController
   # GET /tests/1
   # GET /tests/1.json
   def show
-    if true
-      @test.questions.each do |question|
-        question.solutions.build
-      end
-      render 'test'
-    end
   end
 
   # GET /tests/new
@@ -80,6 +74,6 @@ class TestsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def test_params
-      params.require(:test).permit(:name, questions_attributes: [:id, :test_id, :content, '_destroy', answers_attributes: [:id, :question_id, :content, :correct, '_destroy' ] ], solutions_attributes: [ :id, :question_id, :correct ])
+      params.require(:test).permit(:name, questions_attributes: [:id, :test_id, :content, '_destroy', answers_attributes: [:id, :question_id, :content, :correct, '_destroy' ] ])
     end
 end

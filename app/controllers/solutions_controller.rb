@@ -35,14 +35,12 @@ class SolutionsController < ApplicationController
           count+=1
         end
       end
-      binding.pry
       if params[:answer] == correct_answer.to_s
         @solution.correct = true
         @solution.save
 
       end
-      binding.pry
-      redirect_to [@question, @solution]
+      redirect_to [@question.test.next_question(current_user), @solution]
 
     end
   end
@@ -51,5 +49,4 @@ class SolutionsController < ApplicationController
     def solution_params
       params.require(:solution).permit(:id, :question_id, :correct, :question_attributes => [ :content, :question_id ] )
     end
-
 end
