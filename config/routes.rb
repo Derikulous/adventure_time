@@ -1,6 +1,4 @@
 Offerletter::Application.routes.draw do
-  resources :report_cards
-
 
   resources :tests do
     resources :questions
