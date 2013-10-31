@@ -1,0 +1,21 @@
+<%= form_tag("/", method: "get") do %>
+<h1><%= @test.name %></h1>
+  <% @test.questions.each do |question| %>
+    <%= question.content %><br/>
+    <%= hidden_field_tag :question_id, value: question.id %>
+    <%= hidden_field_tag :correct, value: false %>
+
+      <div class="field">
+        <% count = 1 %>
+        <% question.answers.each do |answer| %>
+          <%= radio_button_tag question.id, count %> <%= answer.content %><br />
+          <% count+=1 %>
+        <% end %>
+      </div>
+
+    <% end %>
+
+  <div class="actions">
+    <%= submit_tag %>
+  </div>
+<% end %>

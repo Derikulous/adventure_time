@@ -1,0 +1,13 @@
+<ol>
+  <% for question in @test.questions %>
+  <li><%= h question.content %></li>
+  <ul>
+    <% for answer in question.answers %>
+      <li><%= h answer.content %></li>
+    <% end %>
+  </ul>
+  <% end %>
+</ol>
+
+<%= link_to 'Edit', edit_test_path(@test) %> |
+<%= link_to 'Back', tests_path %>
