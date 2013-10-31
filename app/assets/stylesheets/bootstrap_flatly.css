@@ -28,7 +28,7 @@ summary {
 }
 
 body {
-  padding: 0px;
+  padding: 60px;
 }
 
 audio,
@@ -359,7 +359,7 @@ body {
   font-size: 15px;
   line-height: 1.428571429;
   color: #111111;
-  background-color: #F2F2F2;
+  background-color: #404040;
 }
 
 input,
