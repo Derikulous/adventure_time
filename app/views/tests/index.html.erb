@@ -13,23 +13,23 @@
   <tbody>
     <% @tests.each do |test| %>
 
-      <tr>
-        <td><%= test.name %></td>
-        <% test.questions.each do |q| %>
+    <tr>
+      <td><%= test.name %></td>
+      <% test.questions.each do |q| %>
 
-          <td><%= q.content %></td>
-            <% q.answers.each do |a| %>
-              <td><%= a.content %></td>
-            <% end %>
-        <% end %>
-        <td><%= link_to 'Show', test, class: "btn btn-default" %></td>
-        <% if policy(test).update? %>
-        <td><%= link_to 'Edit', edit_test_path(test), class: "btn btn-primary" %></td>
-        <% end %>
-        <% if policy(test).destroy? %>
-        <td><%= link_to 'Destroy', test, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
-        <% end %>
-      </tr>
+      <td><%= q.content %></td>
+      <% q.answers.each do |a| %>
+      <td><%= a.content %></td>
+      <% end %>
+      <% end %>
+      <td><%= link_to 'Show', test, class: "btn btn-default" %></td>
+      <% if policy(test).update? %>
+      <td><%= link_to 'Edit', edit_test_path(test), class: "btn btn-primary" %></td>
+      <% end %>
+      <% if policy(test).destroy? %>
+      <td><%= link_to 'Destroy', test, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+      <% end %>
+    </tr>
     <% end %>
   </tbody>
 </table>
@@ -37,5 +37,5 @@
 <br>
 
 <% if current_user.try(:admin?) %>
-  <%= link_to 'New Test', new_test_path, class: "btn btn-success" %>
+<%= link_to 'New Test', new_test_path, class: "btn btn-success" %>
 <% end %>
