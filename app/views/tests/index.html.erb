@@ -23,8 +23,12 @@
             <% end %>
         <% end %>
         <td><%= link_to 'Show', test, class: "btn btn-default" %></td>
+        <% if policy(test).update? %>
         <td><%= link_to 'Edit', edit_test_path(test), class: "btn btn-primary" %></td>
+        <% end %>
+        <% if policy(test).destroy? %>
         <td><%= link_to 'Destroy', test, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
