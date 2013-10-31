@@ -14,11 +14,6 @@ class SolutionsController < ApplicationController
   def new
     @question = Question.find(params[:question_id])
     @solution = @question.solutions.new
-
-    unless current_user.try(:admin?)
-      flash[:alert] = "You are not authorized to view this page."
-      redirect_to root_path
-    end
   end
 
   def edit
