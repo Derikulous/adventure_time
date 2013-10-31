@@ -1,13 +1,27 @@
-<%= semantic_form_for @test do |f| %>
-  <%= f.inputs do %>
-    <%= f.input :name %>
-    <%= f.input :description %>
-    <%= f.select :topic, ["Personal Questions", "Technical Questions", "Interview Etiquette"] %>
-    <%= f.select :difficulty, ["1", "2", "3", "4", "5"] %>
-    <%= f.input :random %>
+<%= form_for(@test) do |f| %>
+  <% if @test.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@test.errors.count, "error") %> prohibited this test from being saved:</h2>
+
+      <ul>
+      <% @test.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
   <% end %>
 
-  <%= f.actions do %>
-    <%= f.action :submit, :as => :input %>
-  <% end %>
+<div class="field">
+  <%= f.label :name %><br />
+  <%= f.text_field :name %>
+</div>
+
+<%= f.fields_for :questions do |builder| %>
+  <%= render 'question_fields', f: builder %>
+<% end %>
+<%= link_to_add_fields "Add Question", f, :questions %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
 <% end %>

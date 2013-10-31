@@ -11,40 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131029234633) do
+ActiveRecord::Schema.define(version: 20131031062631) do
 
-  create_table "questions", force: true do |t|
-    t.string   "title"
+  create_table "answers", force: true do |t|
+    t.integer  "question_id"
+    t.string   "content"
+    t.boolean  "correct"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "test_id"
-    t.string   "answer_one"
-    t.string   "answer_two"
-    t.string   "answer_three"
-    t.string   "answer_four"
-    t.string   "answer_five"
-    t.integer  "correct_answer"
   end
 
-  create_table "report_cards", force: true do |t|
+  create_table "questions", force: true do |t|
     t.integer  "test_id"
-    t.integer  "user_id"
-    t.float    "grade"
-    t.string   "name"
-    t.boolean  "finished"
-    t.integer  "current_question"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "solutions", force: true do |t|
+    t.integer  "question_id"
+    t.boolean  "correct"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "tests", force: true do |t|
     t.string   "name"
-    t.string   "description"
-    t.integer  "difficulty"
-    t.boolean  "random"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "topic"
   end
 
   create_table "users", force: true do |t|

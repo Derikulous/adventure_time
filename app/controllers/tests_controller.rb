@@ -10,12 +10,21 @@ class TestsController < ApplicationController
   # GET /tests/1
   # GET /tests/1.json
   def show
+    if true
+      @test.questions.each do |question|
+        question.solutions.build
+      end
+      render 'test'
+    end
   end
 
   # GET /tests/new
   def new
     @test = Test.new
-    authorize @test
+    1.times do
+      question = @test.questions.build
+      5.times { question.answers.build }
+    end
   end
 
   # GET /tests/1/edit
@@ -26,7 +35,8 @@ class TestsController < ApplicationController
   # POST /tests.json
   def create
     @test = Test.new(test_params)
-    authorize @test
+
+
     respond_to do |format|
       if @test.save
         format.html { redirect_to @test, notice: 'Test was successfully created.' }
@@ -41,7 +51,6 @@ class TestsController < ApplicationController
   # PATCH/PUT /tests/1
   # PATCH/PUT /tests/1.json
   def update
-    authorize @test
     respond_to do |format|
       if @test.update(test_params)
         format.html { redirect_to @test, notice: 'Test was successfully updated.' }
@@ -56,7 +65,6 @@ class TestsController < ApplicationController
   # DELETE /tests/1
   # DELETE /tests/1.json
   def destroy
-    authorize @test
     @test.destroy
     respond_to do |format|
       format.html { redirect_to tests_url }
@@ -72,7 +80,6 @@ class TestsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def test_params
-      params.require(:test).permit(:name, :description, :topic, :difficulty, :random, question_attributes:
-        [:title, :answer])
+      params.require(:test).permit(:name, questions_attributes: [:id, :test_id, :content, '_destroy', answers_attributes: [:id, :question_id, :content, :correct, '_destroy' ] ], solutions_attributes: [ :id, :question_id, :correct ])
     end
-  end
+end

@@ -3,7 +3,8 @@
 <table>
   <thead>
     <tr>
-      <th>Title</th>
+      <th>Test</th>
+      <th>Content</th>
       <th></th>
       <th></th>
       <th></th>
@@ -12,20 +13,17 @@
 
   <tbody>
     <% @questions.each do |question| %>
-    <tr>
-      <td><%= question.title %></td>
-      <td><%= link_to 'Show', test_question_path(@test, question), class: "btn btn-default" %></td>
-      <% if policy(question).update? %>
-      <td><%= link_to 'Edit', edit_test_question_path(@test, question), class: "btn btn-primary" %></td>
-      <% end %>
-      <% if policy(question).destroy? %>
-      <td><%= link_to 'Destroy', [@test, question], method: :delete, data: { confirm: 'Are you sure?', class: "btn btn-danger" } %></td>
-      <% end %>
-    </tr>
+      <tr>
+        <td><%= question.test_id %></td>
+        <td><%= question.content %></td>
+        <td><%= link_to 'Show', question %></td>
+        <td><%= link_to 'Edit', edit_question_path(question) %></td>
+        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Question', new_test_question_path(@test)%>
+<%= link_to 'New Question', new_question_path %>

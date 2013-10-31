@@ -1,15 +1,25 @@
-<%= semantic_form_for [@test, @question] do |f| %>
-  <%= f.inputs do %>
-    <%= f.input :title %>
-    <%= f.input :answer_one %>
-    <%= f.input :answer_two %>
-    <%= f.input :answer_three %>
-    <%= f.input :answer_four %>
-    <%= f.input :answer_five %>
-    <%= f.select :correct_answer, ["1", "2", "3", "4", "5"] %>
+<%= form_for(@question) do |f| %>
+  <% if @question.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved:</h2>
+
+      <ul>
+      <% @question.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
   <% end %>
 
-  <%= f.actions do %>
-    <%= f.action :submit, :as => :input %>
-  <% end %>
+  <div class="field">
+    <%= f.label :test_id %><br>
+    <%= f.number_field :test_id %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br>
+    <%= f.text_area :content %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
 <% end %>

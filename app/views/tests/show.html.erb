@@ -1,32 +1,13 @@
-<p id="notice"><%= notice %></p>
+<ol>
+  <% for question in @test.questions %>
+  <li><%= h question.content %></li>
+  <ul>
+    <% for answer in question.answers %>
+      <li><%= h answer.content %></li>
+    <% end %>
+  </ul>
+  <% end %>
+</ol>
 
-<p>
-  <strong>Name:</strong>
-  <%= @test.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @test.description %>
-</p>
-
-<p>
-  <strong>Topic:</strong>
-  <%= @test.topic %>
-</p>
-
-<p>
-  <strong>Difficulty:</strong>
-  <%= @test.difficulty %>
-</p>
-
-<p>
-  <strong>Random:</strong>
-  <%= @test.random %>
-</p>
-
-<% if policy(@test).update? %>
 <%= link_to 'Edit', edit_test_path(@test) %> |
-<% end %>
-
 <%= link_to 'Back', tests_path %>

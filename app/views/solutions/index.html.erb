@@ -1,0 +1,25 @@
+<h1>Listing solutions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Question</th>
+      <th>Correct</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @solutions.each do |solution| %>
+      <tr>
+        <td><%= solution.question_id %></td>
+        <td><%= solution.correct %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

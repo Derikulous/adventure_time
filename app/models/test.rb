@@ -1,6 +1,4 @@
 class Test < ActiveRecord::Base
-  has_many :report_cards
-  has_many :users, through: :report_cards
-  has_many :questions
-  accepts_nested_attributes_for :questions
+  has_many :questions, :dependent => :destroy
+  accepts_nested_attributes_for :questions, allow_destroy: true
 end

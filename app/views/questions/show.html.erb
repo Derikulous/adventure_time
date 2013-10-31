@@ -1,22 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
-  <%= @question.title %>
+  <strong>Test:</strong>
+  <%= @question.test_id %>
 </p>
 
 <p>
-  <strong>Choices:</strong><br />
-  1) <%= @question.answer_one %><br />
-  2) <%= @question.answer_two %><br />
-  3) <%= @question.answer_three %><br />
-  4) <%= @question.answer_four %><br />
-  5) <%= @question.answer_five %><br />
-  Correct Answer: <%= @question.correct_answer %>
+  <strong>Content:</strong>
+  <%= @question.content %>
 </p>
 
-<% if policy(@question).update? %>
-<%= link_to 'Edit', edit_test_question_path(@test, @question) %> |
-<% end %>
-
-<%= link_to 'Back', test_questions_path(@test) %>
+<%= link_to 'Edit', edit_question_path(@question) %> |
+<%= link_to 'Back', questions_path %>
