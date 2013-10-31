@@ -1,0 +1,27 @@
+<%= form_for(@report) do |f| %>
+  <% if @report.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@report.errors.count, "error") %> prohibited this test from being saved:</h2>
+
+      <ul>
+      <% @test.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.hidden_field :test_id %>
+    <%= f.hidden_field :user_id %>
+    <%= f.hidden_field :grade_float %>
+  </p>
+  <%= f.fields_for :solutions do |builder| %>
+    <p>
+      <%= builder.label :question_id, "solutions" %><br />
+      <%= builder.text_area :question_id, :rows => 3 %>
+    </p>
+  <% end %>
+  <p><%= f.submit "Submit" %></p>
+<% end %>
+
