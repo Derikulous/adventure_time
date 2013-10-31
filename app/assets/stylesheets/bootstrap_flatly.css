@@ -66,6 +66,7 @@ audio:not([controls]) {
 .gravatar {
     border-radius: 50%;
     width: 100px;
+    border: 2px solid #ffffff;
     float: left;
 }
 
@@ -2554,6 +2555,12 @@ fieldset[disabled] .btn-link:focus {
 
 }
 
+.btn-github:hover {
+  color: #ffffff;
+  text-decoration: none;
+  background: #818181;
+}
+
 .btn-linkedin {
   display: block;
   width: 80%;
@@ -2561,6 +2568,12 @@ fieldset[disabled] .btn-link:focus {
   padding-left: 0;
   background-color: #007bb6;
   color: #ffffff;
+}
+
+.btn-linkedin:hover {
+  color: #ffffff;
+  text-decoration: none;
+  background: #00557E;
 }
 
 .btn-block + .btn-block {
@@ -3484,7 +3497,7 @@ input[type="button"].btn-block {
 .dropdown-menu > li > a:focus {
   color: #ffffff;
   text-decoration: none;
-  background-color: #2c3e50;
+  background-color: #3397ce;
 }
 
 .dropdown-menu > .active > a,
@@ -4926,8 +4939,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar-default .navbar-nav > .dropdown > a:hover .caret,
 .navbar-default .navbar-nav > .dropdown > a:focus .caret {
-  border-top-color: #18bc9c;
-  border-bottom-color: #18bc9c;
+  border-top-color: #3397ce;
+  border-bottom-color: #3397ce;
 }
 
 .navbar-default .navbar-nav > .open > a,

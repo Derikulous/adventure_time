@@ -1,8 +1,8 @@
 <div class="col-lg-4">
 <%= gravatar_for @user %>
+<div class="container">
 <div><%= @user.name %></div>
-<br>
-<div><%= @user.email %></div>
-
-<%= link_to "Update", edit_user_path, class: "btn btn-primary" %>
+  <div><%= @user.email %></div>
+<%= link_to "Update Profile", edit_user_path, class: "btn btn-primary" %>
+</div>
 </div>
