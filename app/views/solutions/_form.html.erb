@@ -13,6 +13,7 @@
 
   <div class="field">
     <%= f.hidden_field :question_id, value: @question.id %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
     <%= f.hidden_field :correct, value: false %>
   </div>
   <div class="field">

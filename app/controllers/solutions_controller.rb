@@ -40,13 +40,16 @@ class SolutionsController < ApplicationController
         @solution.save
 
       end
-      redirect_to [@question.test.next_question(current_user), @solution]
-
+      if @question.test.next_question(current_user) != nil
+        redirect_to new_question_solution_path([@question.test.next_question(current_user)])
+      else
+        redirect_to root_path
+      end
     end
   end
 
   private
     def solution_params
-      params.require(:solution).permit(:id, :question_id, :correct, :question_attributes => [ :content, :question_id ] )
+      params.require(:solution).permit(:id, :question_id, :correct, :user_id, :question_attributes => [ :content, :question_id ] )
     end
 end

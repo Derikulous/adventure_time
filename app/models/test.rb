@@ -3,6 +3,10 @@ class Test < ActiveRecord::Base
   accepts_nested_attributes_for :questions, allow_destroy: true
 
   def next_question(user)
-    (questions - user.questions).sample
+    if questions.size == user.questions
+      nil
+    else
+      (questions - user.questions).sample
+    end
   end
 end
