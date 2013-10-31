@@ -1,5 +1,6 @@
 class TestsController < ApplicationController
   before_action :set_test, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!, except: [:index, :show]
 
   # GET /tests
   # GET /tests.json
@@ -19,6 +20,11 @@ class TestsController < ApplicationController
       question = @test.questions.build
       5.times { question.answers.build }
     end
+
+    unless current_user.try(:admin?)
+      flash[:alert] = "You are not authorized to view this page."
+      redirect_to root_path
+    end
   end
 
   # GET /tests/1/edit
@@ -29,7 +35,7 @@ class TestsController < ApplicationController
   # POST /tests.json
   def create
     @test = Test.new(test_params)
-
+    authorize @test
 
     respond_to do |format|
       if @test.save
@@ -45,6 +51,7 @@ class TestsController < ApplicationController
   # PATCH/PUT /tests/1
   # PATCH/PUT /tests/1.json
   def update
+    authorize @test
     respond_to do |format|
       if @test.update(test_params)
         format.html { redirect_to @test, notice: 'Test was successfully updated.' }
@@ -60,6 +67,7 @@ class TestsController < ApplicationController
   # DELETE /tests/1.json
   def destroy
     @test.destroy
+    authorize @test
     respond_to do |format|
       format.html { redirect_to tests_url }
       format.json { head :no_content }
@@ -76,4 +84,4 @@ class TestsController < ApplicationController
     def test_params
       params.require(:test).permit(:name, questions_attributes: [:id, :test_id, :content, '_destroy', answers_attributes: [:id, :question_id, :content, :correct, '_destroy' ] ])
     end
-end
+  end

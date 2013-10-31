@@ -1,4 +1,5 @@
 class SolutionsController < ApplicationController
+  before_filter :authenticate_user!, except: [:index, :show]
 
   def index
     @question = Question.find(params[:question_id])
@@ -8,12 +9,16 @@ class SolutionsController < ApplicationController
   def show
     @question = Question.find(params[:question_id])
     @solution = @question.solutions.find(params[:id])
-    binding.pry
   end
 
   def new
     @question = Question.find(params[:question_id])
     @solution = @question.solutions.new
+
+    unless current_user.try(:admin?)
+      flash[:alert] = "You are not authorized to view this page."
+      redirect_to root_path
+    end
   end
 
   def edit
@@ -38,7 +43,6 @@ class SolutionsController < ApplicationController
       if params[:answer] == correct_answer.to_s
         @solution.correct = true
         @solution.save
-
       end
       if @question.test.next_question(current_user) != nil
         redirect_to new_question_solution_path([@question.test.next_question(current_user)])
@@ -49,7 +53,7 @@ class SolutionsController < ApplicationController
   end
 
   private
-    def solution_params
-      params.require(:solution).permit(:id, :question_id, :correct, :user_id, :question_attributes => [ :content, :question_id ] )
-    end
+  def solution_params
+    params.require(:solution).permit(:id, :question_id, :correct, :user_id, :question_attributes => [ :content, :question_id ] )
+  end
 end

@@ -1,5 +1,7 @@
+<% if current_user.try(:admin?) %>
 <h1>New answer</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', answers_path %>
+<%= link_to 'Back', answers_path, class: "btn btn-default" %>
+<% end %>
