@@ -13,17 +13,23 @@
 
   <tbody>
     <% @questions.each do |question| %>
-      <tr>
-        <td><%= question.test_id %></td>
-        <td><%= question.content %></td>
-        <td><%= link_to 'Show', question %></td>
-        <td><%= link_to 'Edit', edit_question_path(question) %></td>
-        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <tr>
+      <td><%= question.test_id %></td>
+      <td><%= question.content %></td>
+      <td><%= link_to 'Show', question %></td>
+      <% if policy(question).update? %>
+      <td><%= link_to 'Edit', edit_question_path(question), class: "btn btn-primary" %></td>
+      <% end %>
+      <% if policy(question).destroy? %>
+      <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+      <% end %>
+    </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Question', new_question_path %>
+<% if current_user.try(:admin?) %>
+<%= link_to 'New Question', new_question_path, class: "btn btn-success" %
+<% end %>>
