@@ -1,24 +1,20 @@
 <div class="well-center">
-  <h2>Sign up</h2>
+    <h3 style="text-align:center"><b>Offer</b>Letter</h3>
 
-    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-    <%= devise_error_messages! %>
+  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
 
-    <div><%= f.label :email %><br />
-    <%= f.email_field :email, class: "form-control", :autofocus => true %></div>
+  <div><%= f.email_field :email, class: "form-control", :autofocus => true, :placeholder => "email" %></div>
 
-    <div><%= f.label :password %><br />
-    <%= f.password_field :password, class: "form-control" %></div>
+  <div><%= f.password_field :password, class: "form-control", :placeholder => "password" %></div>
 
-    <div><%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, class: "form-control" %></div>
+  <div><%= f.password_field :password_confirmation, class: "form-control", :placeholder => "password confirmation" %></div>
 
-    </br>
+  <div><%= f.submit "Sign up", class: "btn btn-block" %></div>
+  <% end %>
 
-    <div><%= f.submit "Sign up", class: "btn btn-block" %></div>
-    <% end %>
+<li class="divider"></li>
 
-    </br>
+<%= render "devise/shared/links" %>
 
-  <%= render "devise/shared/links" %>
 </div>

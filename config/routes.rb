@@ -1,6 +1,6 @@
 Offerletter::Application.routes.draw do
   resources :report_cards
-  resources :users
+
 
   resources :tests do
     resources :questions
@@ -10,6 +10,8 @@ Offerletter::Application.routes.draw do
 
   devise_for :users,
              controllers: {omniauth_callbacks: "omniauth_callbacks"}
+
+  resources :users
 
   root to: 'welcome#index'
 

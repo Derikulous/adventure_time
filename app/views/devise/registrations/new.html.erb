@@ -1,4 +1,4 @@
-<div class="well-center">
+<div class="well col-lg-4">
   <h2>Sign up</h2>
 
     <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
@@ -18,7 +18,7 @@
     <div><%= f.submit "Sign up", class: "btn btn-block" %></div>
     <% end %>
 
-    </br>
+<li class="divider"></li>
 
   <%= render "devise/shared/links" %>
 </div>

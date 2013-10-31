@@ -21,6 +21,7 @@ gem 'pundit'
 gem 'formtastic'
 gem 'high_voltage'
 gem 'pry-rails'
+gem "font-awesome-rails"
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

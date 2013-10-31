@@ -35,23 +35,15 @@
         <!-- Modal -->
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <%= render "layouts/modals/signin" %>
-              </div>
-            </div><!-- /.modal-content -->
-          </div><!-- /.modal-dialog -->
+            <%= render "layouts/modals/signin" %>
+          </div>
         </div><!-- /.modal -->
         <li class="create-account"><%= link_to "Create Account", "#myModal1", "data-toggle" => "modal", :class => "btn btn-primary" %></li>
         <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <%= render "layouts/modals/signup" %>
-                <% end %>
-              </div>
-            </div><!-- /.modal-content -->
-          </div><!-- /.modal-dialog -->
+            <%= render "layouts/modals/signup" %>
+            <% end %>
+          </div>
         </div><!-- /.modal -->
       </ul>
     </div>
