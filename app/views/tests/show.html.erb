@@ -3,11 +3,14 @@
   <li><%= h question.content %></li>
   <ul>
     <% for answer in question.answers %>
-      <li><%= h answer.content %></li>
+    <li><%= h answer.content %></li>
     <% end %>
   </ul>
   <% end %>
 </ol>
 
-<%= link_to 'Edit', edit_test_path(@test), class: "btn btn-primary" %> |
-<%= link_to 'Back', tests_path %>
+<% if current_user.try(:admin?) %>
+  <%= link_to 'Edit', edit_test_path(@test), class: "btn btn-success" %> |
+<% end %>
+
+<%= link_to 'Back', tests_path, class: "btn btn-warning" %>
