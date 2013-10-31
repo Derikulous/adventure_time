@@ -1,15 +1,15 @@
 <%= form_for(@test) do |f| %>
-  <% if @test.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@test.errors.count, "error") %> prohibited this test from being saved:</h2>
+<% if @test.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@test.errors.count, "error") %> prohibited this test from being saved:</h2>
 
-      <ul>
-      <% @test.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <ul>
+    <% @test.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 
 <div class="field">
   <%= f.label :name %><br />
@@ -17,11 +17,11 @@
 </div>
 
 <%= f.fields_for :questions do |builder| %>
-  <%= render 'question_fields', f: builder %>
+<%= render 'question_fields', f: builder %>
 <% end %>
 <%= link_to_add_fields "Add Question", f, :questions %>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<div class="actions">
+  <%= f.submit %>
+</div>
 <% end %>

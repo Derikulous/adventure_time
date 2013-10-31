@@ -22,9 +22,9 @@
               <td><%= a.content %></td>
             <% end %>
         <% end %>
-        <td><%= link_to 'Show', test %></td>
-        <td><%= link_to 'Edit', edit_test_path(test) %></td>
-        <td><%= link_to 'Destroy', test, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', test, class: "btn btn-default" %></td>
+        <td><%= link_to 'Edit', edit_test_path(test), class: "btn btn-primary" %></td>
+        <td><%= link_to 'Destroy', test, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +32,6 @@
 
 <br>
 
-<%= link_to 'New Test', new_test_path %>
+<% if current_user.try(:admin?) %>
+  <%= link_to 'New Test', new_test_path %>
+<% end %>
