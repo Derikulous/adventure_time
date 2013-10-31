@@ -16,7 +16,7 @@ class TestsController < ApplicationController
   # GET /tests/new
   def new
     @test = Test.new
-    4.times do
+    1.times do
       question = @test.questions.build
       5.times { question.answers.build }
     end
