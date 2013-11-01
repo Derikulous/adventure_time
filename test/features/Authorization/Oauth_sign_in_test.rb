@@ -7,7 +7,9 @@ feature "As a user, I want to sign in to the app so that I can access my content
     click_on "Sign In"
 
     # When the user creates a new session
-    sign_in(:one)
+    within ('#myModal') do
+      sign_in(:one)
+    end
 
     # Then the user should be signed in
     page.wont_have_content 'Invalid email or password.'
@@ -19,7 +21,6 @@ feature "As a user, I want to sign in to the app so that I can access my content
 
     scenario "sign in with linkedin works" do
       visit root_path
-      save_and_open_page
       click_on "Sign In"
       OmniAuth.config.test_mode = true
       Capybara.current_session.driver.request.env['devise.mapping'] = Devise.mappings[:user]

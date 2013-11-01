@@ -8,7 +8,6 @@ feature 'As a site visitor, I want to be able to sign up to use the site by crea
     page.must_have_content 'Create Account'
     page.text.wont_include 'Sign Out'
     click_on 'Create Account'
-    save_and_open_page
 
     #When I register with valid information
     within('#myModal1') do
