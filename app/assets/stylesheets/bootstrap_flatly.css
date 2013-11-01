@@ -371,7 +371,8 @@ body {
 }
 
 #mountain {
-  background: url(/assets/mountain.jpg);
+  background: url(/assets/mountain.jpg) no-repeat center center fixed;
+  background-size: cover;
 }
 
 input,
