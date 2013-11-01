@@ -18,6 +18,7 @@ feature "As a user, I want to sign in to the app so that I can access my content
 
     scenario "sign in with linkedin works" do
       visit root_path
+      save_and_open_page
       click_on "Sign In"
       OmniAuth.config.test_mode = true
       Capybara.current_session.driver.request.env['devise.mapping'] = Devise.mappings[:user]
