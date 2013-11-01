@@ -1,23 +1,39 @@
-<div class="background-forest">
-  <div class="container">
+<div class="container">
     <div class="well-test col-md-6">
 
       <%= gravatar_for @user %>
 
-      <div><%= @user.name %></div>
-      <div><%= @user.email %></div>
+      <div><h1><%= @user.name %></h1></div>
+      <div><h4>Email: <%= @user.email %></h4></div><br/ ><br/ >
       <%= link_to "Update Profile", edit_user_path, class: "btn btn-primary" %><br/ >
       <br/ >
+      <h3>Report Card</h3>
+      <div class="bs-example table-responsive">
+      <table class="table table-striped table-bordered table-hover">
+            <thead>
+      <tr>
+        <th>Question</th>
+        <th>Test Name</th>
+        <% if current_user.present? %>
+        <th>Score</th>
+        <% end %>
+      </tr>
+    </thead>
       <% @user.solutions.each do |solution| %>
-      <%= solution.question.test.name %><br/ >
-      <%= solution.question.content %><br/ >
-      <% if solution.correct %>
-      correct<br/ >
+      <thead>
+        <tr>
+      <th><%= solution.question.test.name %></th>
+      <th><%= solution.question.content %></th>
+      <th><% if solution.correct %>
+      Correct<br/ >
       <% else %>
-      incorrect<br/ >
+      Incorrect<br/ >
+    </th>
       <% end %>
       <% end %>
-
+      </tr>
+    </thead>
+    </table>
+</div>
     </div>
   </div>
-</div>
