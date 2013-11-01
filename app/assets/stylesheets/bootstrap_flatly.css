@@ -27,7 +27,7 @@ summary {
   display: block;
 }
 
-body{
+body {
   padding-top: 60px;
 }
 
@@ -370,7 +370,7 @@ body {
 
 #mountain {
   background: url(/assets/mountain.jpg);
-  }
+}
 
 input,
 button,

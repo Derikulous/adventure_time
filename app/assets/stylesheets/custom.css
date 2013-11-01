@@ -4,8 +4,12 @@
   background-image: url(/assets/sky_texture.jpg);
 }
 
+.background-forest {
+  background-image: url(/assets/forest.jpg);
+}
+
 .background-image {
-  padding: 0px 40px 0px 40px;
+  padding: 0px 40px 40px 40px;
   background-color: #F5F5DC;
 }
 
@@ -14,7 +18,7 @@
   font-size: 12px;
   padding-left: 40px;
   padding-right: 40px;
-  margin-left: 170px;
+  margin-left: 125px;
 }
 
 .form-back {
