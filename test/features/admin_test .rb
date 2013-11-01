@@ -4,7 +4,7 @@ feature "admin tests for offerletter" do
   scenario "admin tries to add a test" do
 
     # navigate tests page
-    visit tests_path
+    visit root_path
 
     # admin signs in
     sign_in(:admin)

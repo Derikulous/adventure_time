@@ -5,6 +5,7 @@ feature 'As a user, I want a profile page' do
 
     # Given a signed in user
     visit new_user_session_path
+    save_and_open_page
     sign_in(:one)
 
     # When I visit the profile page
