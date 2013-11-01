@@ -1,6 +1,5 @@
 <fieldset>
-  <%= f.label :content, "Question" %><br/>
-  <%= f.text_area :content %><br/>
+  <%= f.text_area :content, class:"form-control", placeholder:"ask question here" %>
   <%= f.hidden_field :_destroy %>
   <%= link_to "Remove Question", '#', class: "remove_fields" %>
   <%= f.fields_for :answers do |builder| %>

@@ -1,18 +1,23 @@
-<div class="col-lg-4">
-<%= gravatar_for @user %>
-<div class="container">
-<div><%= @user.name %></div>
-  <div><%= @user.email %></div>
-<%= link_to "Update Profile", edit_user_path, class: "btn btn-primary" %><br/ >
-<br/ >
-<% @user.solutions.each do |solution| %>
-  <%= solution.question.test.name %><br/ >
-  <%= solution.question.content %><br/ >
-  <% if solution.correct %>
-    correct<br/ >
-  <% else %>
-    incorrect<br/ >
-  <% end %>
-<% end %>
-</div>
+<div class="background-forest">
+  <div class="container">
+    <div class="well-test col-md-6">
+
+      <%= gravatar_for @user %>
+
+      <div><%= @user.name %></div>
+      <div><%= @user.email %></div>
+      <%= link_to "Update Profile", edit_user_path, class: "btn btn-primary" %><br/ >
+      <br/ >
+      <% @user.solutions.each do |solution| %>
+      <%= solution.question.test.name %><br/ >
+      <%= solution.question.content %><br/ >
+      <% if solution.correct %>
+      correct<br/ >
+      <% else %>
+      incorrect<br/ >
+      <% end %>
+      <% end %>
+
+    </div>
+  </div>
 </div>

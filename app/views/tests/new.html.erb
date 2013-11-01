@@ -1,8 +1,13 @@
-<% if current_user.try(:admin?) %>
+<div class="background-cloud">
+  <div class="container">
+    <div class="well-test col-md-6">
+      <% if current_user.try(:admin?) %>
 
-<h1>New Test</h1>
+      <h3 style="text-align:center">New Test</h3>
 
-  <%= render 'form' %>
+      <%= render 'form' %>
 
-<%= link_to 'Back', tests_path, class: "btn btn-default" %>
-<% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

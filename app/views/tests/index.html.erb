@@ -1,3 +1,4 @@
+<div class="background-image">
 <div class="page-header">
   <h1 id="tables">OfferLetter Quizzes</h1>
 </div>
@@ -23,11 +24,15 @@
         <% if current_user.present? %>
         <th><h3><%= test.generate_score(current_user) %></h3></th>
         <th>
+<<<<<<< HEAD
+          <%= link_to 'Take Test', new_question_solution_path(test.questions.sample), class: "btn btn-info" %>
+=======
           <% if test.next_question(current_user) %>
           <%= link_to 'Take Test', new_question_solution_path(test.questions.sample), class: "btn btn-default" %>
           <% else %>
           <%= link_to 'Taken', '', class: "btn btn-warning" %>
           <% end %>
+>>>>>>> b2bc5b7f640ceaf2913a791c1849ca7b98232527
           <% if policy(test).update? %>
             <%= link_to 'Edit', edit_test_path(test), class: "btn btn-primary" %>
           <% end %>
@@ -48,5 +53,5 @@
 <%= link_to 'New Test', new_test_path, class: "btn btn-success" %>
 <% end %>
 
-
+</div>
 

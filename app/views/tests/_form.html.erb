@@ -12,8 +12,7 @@
 <% end %>
 
 <div class="field">
-  <%= f.label :name %><br />
-  <%= f.text_field :name %>
+  <%= f.text_field :name, class:"form-control", placeholder: "name" %>
 </div>
 
 <%= f.fields_for :questions do |builder| %>
@@ -22,6 +21,6 @@
 <%= link_to_add_fields "Add Question", f, :questions %>
 
 <div class="actions">
-  <%= f.submit %>
+<%= link_to 'Back', tests_path, class: "btn btn-default form-back" %><%= f.submit "Submit", class: "btn btn-primary form-back" %>
 </div>
 <% end %>
