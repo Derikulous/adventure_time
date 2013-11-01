@@ -6,16 +6,12 @@ Offerletter::Application.routes.draw do
     resources :solutions
   end
 
-  #resources :answers
-
   devise_for :users,
              controllers: {omniauth_callbacks: "omniauth_callbacks"}
 
   resources :users , only: [:show, :edit, :update]
 
   root to: 'welcome#index'
-
-
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -2,7 +2,7 @@ class Solution < ActiveRecord::Base
   belongs_to :question
   belongs_to :user
   belongs_to :report
-  #accepts_nested_attributes_for :question
+
 
   def check_answer(q)
     if q == find_answer.to_s
