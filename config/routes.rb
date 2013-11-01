@@ -1,5 +1,4 @@
 Offerletter::Application.routes.draw do
-
   resources :tests
 
   resources :questions, only: [:show, :edit, :update] do
