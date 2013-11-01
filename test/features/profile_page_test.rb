@@ -9,7 +9,7 @@ feature 'As a user, I want a profile page' do
     sign_in(:one)
 
     # When I visit the profile page
-    visit profile_path
+    visit user_path
 
     # Then I should see my name
     page.text.must_include 'Profile'
