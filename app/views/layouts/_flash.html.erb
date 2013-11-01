@@ -1,6 +1,8 @@
   <!-- bootstrap flash -->
+  <div class="container">
   <% flash.each do |key, value| %>
   <div class="<%= flash_class(key) %>">
     <%= value %>
     <% end %>
   </div>
+</div>
