@@ -29,4 +29,7 @@ Offerletter::Application.configure do
 
   # configuration for devise
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+  ENV['FACEBOOK_APP_ID'] = "12345";
+  ENV['FACEBOOK_SECRET'] = "abcdef";
 end

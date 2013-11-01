@@ -9,9 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-secret = ENV['RAILS_SECRET']
-if secret.nil? || secret.length < 30
-  puts "Secret token cannot be loaded"
-else
-  Offerletter::Application.config.secret_key_base = secret
-end
+Offerletter::Application.config.secret_key_base = ENV['RAILS_SECRET']
