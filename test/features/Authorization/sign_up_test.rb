@@ -8,6 +8,7 @@ feature 'As a site visitor, I want to be able to sign up to use the site by crea
     page.must_have_content 'Create Account'
     page.text.wont_include 'Sign Out'
     find_link('Create Account').click
+    save_and_open_page
 
     #When I register with valid information
     fill_in 'email', with: 'bed@sleepy.com', :match => :prefer_exact
