@@ -4617,6 +4617,10 @@ textarea.input-group-sm > .input-group-btn > .btn {
   padding-left: 10px;
 }
 
+.center-footer {
+  text-align: center;
+}
+
 .navbar-fixed-bottom {
   position: absolute;
   padding: 15px 0px 15px 0px;
