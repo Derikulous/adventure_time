@@ -27,8 +27,8 @@ summary {
   display: block;
 }
 
-body {
-  padding: 60px;
+body{
+  padding-top: 60px;
 }
 
 audio,
@@ -94,7 +94,8 @@ html {
 #slogan {
   font-size: 36px;
   color: #ffffff;
-  font-family:
+  font-family: Helvetica;
+  margin-left: 45px;
 }
 
 body {
@@ -364,9 +365,12 @@ body {
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 15px;
   line-height: 1.428571429;
-  color: #111111;
-  background: url(/assets/mountain.jpg);
+  color: #000000;
 }
+
+#mountain {
+  background: url(/assets/mountain.jpg);
+  }
 
 input,
 button,
@@ -608,8 +612,9 @@ h4 small,
 
 .page-header {
   padding-bottom: 9.5px;
-  margin: 42px 0 21px;
-  border-bottom: 1px solid #ecf0f1;
+  margin: 0px 0px 0px 0px;
+  padding-top: 30px;
+  border-bottom: 1px solid #000000;
 }
 
 ul,
@@ -1540,7 +1545,7 @@ pre code {
 
 table {
   max-width: 100%;
-  background-color: transparent;
+  background-color: #CACACA;
 }
 
 th {
@@ -1596,7 +1601,7 @@ th {
 }
 
 .table-bordered {
-  border: 1px solid #ecf0f1;
+  border: 1px solid #000000;
 }
 
 .table-bordered > thead > tr > th,
@@ -2445,8 +2450,8 @@ fieldset[disabled] .btn-success.active {
 
 .btn-info {
   color: #ffffff;
-  background-color: #3498db;
-  border-color: #3498db;
+  background-color: #57c131;
+  border-color: #57c131;
 }
 
 .btn-info:hover,
@@ -2455,8 +2460,8 @@ fieldset[disabled] .btn-success.active {
 .btn-info.active,
 .open .dropdown-toggle.btn-info {
   color: #ffffff;
-  background-color: #2383c4;
-  border-color: #2077b2;
+  background-color: #459827;
+  border-color: #459827;
 }
 
 .btn-info:active,
@@ -4940,7 +4945,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form {
-  border-color: #1f2c39;
+  border-color: transparent;
 }
 
 .navbar-default .navbar-nav > .dropdown > a:hover .caret,
@@ -5557,6 +5562,12 @@ a.thumbnail:focus {
   padding-right: 35px;
 }
 
+.alert-success {
+  width: 35%;
+  margin-left: 60px;
+  text-align: center;
+}
+
 .alert-dismissable .close {
   position: relative;
   top: -2px;
@@ -5566,8 +5577,8 @@ a.thumbnail:focus {
 
 .alert-success {
   color: #ffffff;
-  background-color: #18bc9c;
-  border-color: #18bc9c;
+  background-color: #3397ce;
+  border-color: transparent;
 }
 
 .alert-success hr {
@@ -6133,6 +6144,17 @@ a.list-group-item:focus {
   background-color: #ecf0f1;
   border: 1px solid #d7e0e2;
   border-radius: 4px;
+}
+
+.well-test {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  margin-top: 40px;
+  background-color: #ecf0f1;
+  border: 1px solid #d7e0e2;
+  border-radius: 4px;
+  margin-left: 30px;
 }
 
 .well blockquote {
