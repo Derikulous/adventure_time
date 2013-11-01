@@ -5,8 +5,9 @@ feature 'As a user, I want a profile page' do
 
     # Given a signed in user
     visit new_user_session_path
-    save_and_open_page
-    sign_in(:one)
+    within ('#myModal') do
+      sign_in(:one)
+    end
 
     # When I visit the profile page
     visit user_path
@@ -14,6 +15,6 @@ feature 'As a user, I want a profile page' do
     # Then I should see my name
     page.text.must_include 'Profile'
     page.text.must_include 'Sign Out'
-    page.must_have_content 'Welcome Derik@whyme.com'
+    page.must_have_content 'Welcome user@example.com'
   end
 end

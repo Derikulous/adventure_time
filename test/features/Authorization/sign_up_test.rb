@@ -7,14 +7,15 @@ feature 'As a site visitor, I want to be able to sign up to use the site by crea
     visit root_path
     page.must_have_content 'Create Account'
     page.text.wont_include 'Sign Out'
-    find_link('Create Account').click
-    save_and_open_page
+    click_on 'Create Account'
 
     #When I register with valid information
-    fill_in 'email', with: 'bed@sleepy.com', :match => :prefer_exact
-    fill_in 'password', with: 'jameschuangchuangchuang', :match => :prefer_exact
-    fill_in 'password confirmation', with: 'jameschuangchuangchuang', :match => :prefer_exact
-    click_on 'Sign up'
+    within('#myModal1') do
+      fill_in 'email', with: 'bed@sleepy.com', :match => :prefer_exact
+      fill_in 'password', with: 'jameschuangchuangchuang', :match => :prefer_exact
+      fill_in 'password confirmation', with: 'jameschuangchuangchuang', :match => :prefer_exact
+    end
+      click_on 'Sign up'
 
     # Then I should be signed up
     page.text.must_include 'Welcome! You have signed up successfully.'
