@@ -5,7 +5,9 @@ feature 'As a user, I want a profile page' do
 
     # Given a signed in user
     visit new_user_session_path
-    sign_in(:one)
+    within ('#myModal') do
+      sign_in(:one)
+    end
 
     # When I visit the profile page
     visit user_path
