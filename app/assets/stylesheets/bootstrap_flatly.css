@@ -94,7 +94,6 @@ html {
 #slogan {
   font-size: 36px;
   color: #ffffff;
-  font-family:
 }
 
 body {
@@ -2202,8 +2201,6 @@ textarea.input-lg {
       -ms-user-select: none;
        -o-user-select: none;
           user-select: none;
-}
-
 }
 
 .btn:focus {
