@@ -9,12 +9,12 @@ require "minitest/rails/capybara"
 require "minitest/pride"
 require "minitest/focus"
 require "minitest/colorize"
-include Capybara::DSL
+
 include Devise::TestHelpers
 Rails.application.routes.default_url_options[:host] = 'localhost:3000'
 
 class ActiveSupport::TestCase
-
+  include Capybara::DSL
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   #
   # Note: You'll currently still have to declare fixtures explicitly in integration tests
