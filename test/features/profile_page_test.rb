@@ -13,6 +13,6 @@ feature 'As a user, I want a profile page' do
     # Then I should see my name
     page.text.must_include 'Profile'
     page.text.must_include 'Sign Out'
-    page.must_have_content 'Welcome Derik@whyme.com'
+    page.must_have_content 'Welcome user@example.com'
   end
 end
