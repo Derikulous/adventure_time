@@ -68,6 +68,7 @@ audio:not([controls]) {
     width: 100px;
     border: 2px solid #ffffff;
     float: left;
+    margin: 10px;
 }
 
 .navbar-nav > li > .btn-clear {
@@ -366,6 +367,7 @@ body {
   font-size: 15px;
   line-height: 1.428571429;
   color: #000000;
+  background: url(/assets/pattern.jpg)
 }
 
 #mountain {
@@ -6130,11 +6132,11 @@ a.list-group-item:focus {
 }
 
 .well-middle {
-    width: 300px;
-    margin-top: 20px;
+    width: 350px;
+    margin: 10px;
     min-height: 20px;
     padding: 19px;
-    background-color: #ffffff;
+    background-color: #F0F0F0;
     border: 1px solid #818181;
     border-radius: 4px;
 }
@@ -6143,7 +6145,9 @@ a.list-group-item:focus {
   min-height: 20px;
   padding: 19px;
   margin-bottom: 20px;
-  background-color: #ecf0f1;
+  background-color: #F0F0F0;
+
+
   border: 1px solid #d7e0e2;
   border-radius: 4px;
 }
@@ -6152,7 +6156,7 @@ a.list-group-item:focus {
   min-height: 20px;
   padding: 19px;
   margin-bottom: 20px;
-  margin-top: 40px;
+  margin-top: 10px;
   background-color: #ecf0f1;
   border: 1px solid #d7e0e2;
   border-radius: 4px;

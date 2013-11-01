@@ -19,11 +19,13 @@
   <div class="field">
     <% count = 1 %>
     <% @question.answers.each do |answer| %>
-      <%= radio_button_tag "answer", count %> <%= answer.content %><br />
+      <div class="radio">
+      <h4><%= radio_button_tag "answer", count %> <%= answer.content %></h4>
       <% count+=1 %>
+      </div>
     <% end %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Next Question", :class => 'btn btn-primary' %>
   </div>
 <% end %>
