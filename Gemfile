@@ -32,6 +32,7 @@ group :developemnt, :test do
   gem 'simplecov', require: false
   gem 'launchy'
   gem 'turn'
+  gem 'sqlite3', group: [:development, :test]
 end
 
 group :production do
