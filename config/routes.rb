@@ -2,16 +2,16 @@ Offerletter::Application.routes.draw do
 
   resources :tests
 
-  resources :questions do
+  resources :questions, only: [:show, :edit, :update] do
     resources :solutions
   end
 
-  resources :answers
+  #resources :answers
 
   devise_for :users,
              controllers: {omniauth_callbacks: "omniauth_callbacks"}
 
-  resources :users
+  resources :users , only: [:show, :edit, :update]
 
   root to: 'welcome#index'
 

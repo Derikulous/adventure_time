@@ -5,7 +5,6 @@ class Solution < ActiveRecord::Base
   #accepts_nested_attributes_for :question
 
   def check_answer(q)
-    binding.pry
     if q == find_answer.to_s
       self.correct = true
       self.save
