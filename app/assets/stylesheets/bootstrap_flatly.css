@@ -97,6 +97,7 @@ html {
   color: #ffffff;
   font-family: Helvetica;
   margin-left: 45px;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 body {
@@ -4980,12 +4981,12 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 @media (max-width: 767px) {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-    color: #ffffff;
+    color: #818181;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #18bc9c;
-    background-color: transparent;
+    color: #ffffff;
+    background-color: #3397ce;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,

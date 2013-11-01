@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Offerletter::Application.config.secret_key_base = 'f1f6cb1d6e68aac7b4ebcf4c6ab1c893bfaf7357a08123a83c488cfba230bf67e80ce1b6592ef1031e9d302f8ac34f2eaf9437308f0880a273cf1b0cdc54910e'
+Offerletter::Application.config.secret_key_base = ENV['RAILS_SECRET']
