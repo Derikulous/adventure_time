@@ -28,7 +28,7 @@ feature "As a user, I want to sign in to the app so that I can access my content
         info: { nickname: 'test_linkedin_user'},
         })
       first(:link, "Login with Linkedin").click
-      page.must_have_content "test_Linkedin_user, you are signed in!"
+      page.must_have_content "you are signed in!"
     end
 
     scenario "sign in with github works" do
@@ -42,7 +42,7 @@ feature "As a user, I want to sign in to the app so that I can access my content
         uid: '12345',
         info: { nickname: 'test_github_user'},
         })
-      click_on "Login with Github"
-      page.must_have_content "test_Github_user, you are signed in!"
+      first(:link, "Login with Github").click
+      page.must_have_content "you are signed in!"
     end
   end
