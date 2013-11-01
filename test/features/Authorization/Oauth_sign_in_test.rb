@@ -1,4 +1,4 @@
-require "test_helper"
+require 'test_helper'
 
 feature "As a user, I want to sign in to the app so that I can access my content." do
   scenario "a user signs in" do

@@ -7,12 +7,12 @@ feature 'As a site visitor, I want to be able to sign up to use the site by crea
     visit root_path
     page.must_have_content 'Create Account'
     page.text.wont_include 'Sign Out'
-    click_link 'Create Account'
+    find_link('Create Account').click
 
     #When I register with valid information
-    fill_in 'Email', with: 'bed@sleepy.com'
-    fill_in 'Password', with: 'jameschuangchuangchuang'
-    fill_in 'Password confirmation', with: 'jameschuangchuangchuang'
+    fill_in 'email', with: 'bed@sleepy.com', :match => :prefer_exact
+    fill_in 'password', with: 'jameschuangchuangchuang', :match => :prefer_exact
+    fill_in 'password confirmation', with: 'jameschuangchuangchuang', :match => :prefer_exact
     click_on 'Sign up'
 
     # Then I should be signed up

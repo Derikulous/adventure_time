@@ -1,4 +1,4 @@
-require "test_helper"
+require 'test_helper'
 
 feature "admin tests for offerletter" do
   scenario "admin tries to add a test" do

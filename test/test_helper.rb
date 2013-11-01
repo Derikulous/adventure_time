@@ -4,8 +4,10 @@ ENV["RAILS_ENV"] ||= "test"
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 require "minitest/rails"
-require "capybara/rspec/matchers"
 require "minitest/rails/capybara"
+include Capybara::DSL
+include Devise::TestHelpers
+include Capybara::Assertions
 
 class ActiveSupport::TestCase
   ActiveRecord::Migration.check_pending!
@@ -19,16 +21,12 @@ class ActiveSupport::TestCase
   def sign_in(one)
     puts users(one).email
     visit new_user_session_path
-    fill_in "Email", with: users(one).email
-    fill_in "Password", with: "password"
+    fill_in "email", with: users(one).email
+    fill_in "password", with: "password"
     click_on "Sign in"
   end
 
   # Add more helper methods to be used by all tests here...
 end
 
-class ActionDispatch::IntegrationTest
-  include Rails.application.routes.url_helpers
-  include Capybara::RSpecMatchers
-  include Capybara::DSL
-end
+Turn.config.format = :outline

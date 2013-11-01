@@ -1,4 +1,4 @@
-require "test_helper"
+require 'test_helper'
 
 feature "visitor tests for offerletter" do
   scenario "visitor visits main splash page" do
@@ -14,10 +14,10 @@ feature "visitor tests for offerletter" do
   scenario "visitor visits main splash page" do
 
     #navigate to about page
-    visit about_path
+    visit '/pages/about'
 
     # page must have title
-    page.text.must_include 'OfferLetter is a'
-
+    page.text.must_include 'Sign In'
+    page.text.must_include 'Interviews are hard mmmkay'
   end
 end
