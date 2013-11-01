@@ -8,7 +8,7 @@
 
 <%- if devise_mapping.omniauthable? %>
   <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= link_to "<i class='icon-#{provider}'></i> Login with #{provider.to_s.titleize}".html_safe,  omniauth_authorize_path(resource_name, provider), class: "service btn-#{provider}"%>
+    <%= link_to "<i class='icon-#{provider}' id='#{provider}'></i> Login with #{provider.to_s.titleize}".html_safe,  omniauth_authorize_path(resource_name, provider), class: "service btn-#{provider}" %>
   <% end -%>
 <% end -%>
 

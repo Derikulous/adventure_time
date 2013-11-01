@@ -7,7 +7,7 @@ feature "A user takes an offerletter test" do
     visit root_path
 
     # When the visitor tries to take a test
-    pending
+    pending 'route is not functioning as intended'
 
     # Then the page will not include the ability to take a test
     page.must_not_include 'Take Test'

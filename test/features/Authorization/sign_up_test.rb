@@ -10,7 +10,7 @@ feature 'As a site visitor, I want to be able to sign up to use the site by crea
     click_on 'Create Account'
 
     #When I register with valid information
-    within('#myModal1') do
+    within('#signup') do
       fill_in 'email', with: 'bed@sleepy.com', :match => :prefer_exact
       fill_in 'password', with: 'jameschuangchuangchuang', :match => :prefer_exact
       fill_in 'password confirmation', with: 'jameschuangchuangchuang', :match => :prefer_exact
