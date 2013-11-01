@@ -1,6 +1,6 @@
 <div class='container'>
   <% @tests.each do |test| %>
-    <div class='well-middle col-lg-4 col-lg-4'>
+    <div class='well-middle col-lg-3 col-lg-3'>
       <h3><%= test.name %></h3>
       <h4>Number of Questions: <%= test.questions.size %> </h4>
       <% if current_user.present? %>
