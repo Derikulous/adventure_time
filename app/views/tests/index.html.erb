@@ -7,21 +7,32 @@
   <table class="table table-striped table-bordered table-hover">
     <thead>
       <tr>
-        <th>#</th>
         <th>Name</th>
         <th># of Questions</th>
+        <% if current_user.present? %>
+        <th>Score</th>
         <th>Options</th>
+        <% end %>
       </tr>
     </thead>
   <tbody>
     <% @tests.each do |test| %>
     <thead>
       <tr>
-        <th><h3><%= test.id %></h3></th>
         <th><h3><%= test.name %></h3></th>
         <th><h3><%= test.questions.size %></h3></th>
+        <% if current_user.present? %>
+        <th><h3><%= test.generate_score(current_user) %></h3></th>
         <th>
+<<<<<<< HEAD
           <%= link_to 'Take Test', new_question_solution_path(test.questions.sample), class: "btn btn-info" %>
+=======
+          <% if test.next_question(current_user) %>
+          <%= link_to 'Take Test', new_question_solution_path(test.questions.sample), class: "btn btn-default" %>
+          <% else %>
+          <%= link_to 'Taken', '', class: "btn btn-warning" %>
+          <% end %>
+>>>>>>> b2bc5b7f640ceaf2913a791c1849ca7b98232527
           <% if policy(test).update? %>
             <%= link_to 'Edit', edit_test_path(test), class: "btn btn-primary" %>
           <% end %>
@@ -29,6 +40,7 @@
           <%= link_to 'Destroy', test, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
           <% end %>
         </th>
+        <% end %>
       </tr>
     </thead>
     <% end %>

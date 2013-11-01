@@ -94,8 +94,11 @@ html {
 #slogan {
   font-size: 36px;
   color: #ffffff;
+<<<<<<< HEAD
   font-family: Helvetica;
   margin-left: 45px;
+=======
+>>>>>>> b2bc5b7f640ceaf2913a791c1849ca7b98232527
 }
 
 body {
@@ -2207,8 +2210,6 @@ textarea.input-lg {
       -ms-user-select: none;
        -o-user-select: none;
           user-select: none;
-}
-
 }
 
 .btn:focus {
@@ -4620,6 +4621,10 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 #footer-copy {
   padding-left: 10px;
+}
+
+.center-footer {
+  text-align: center;
 }
 
 .navbar-fixed-bottom {

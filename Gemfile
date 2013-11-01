@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.0.0'
-gem 'sqlite3'
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
@@ -18,10 +17,10 @@ gem 'omniauth-github'
 gem 'omniauth-linkedin'
 gem 'figaro'
 gem 'pundit'
-gem 'formtastic'
 gem 'high_voltage'
 gem 'pry-rails'
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
+gem 'formtastic'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -33,9 +32,12 @@ group :developemnt, :test do
   gem 'simplecov', require: false
   gem 'launchy'
   gem 'turn'
-
+  gem 'sqlite3'
 end
 
 group :production do
+  gem 'rails_12factor'
   gem 'pg'
 end
+
+ruby '2.0.0'
