@@ -25,6 +25,8 @@
         <th>
           <% if test.next_question(current_user) %>
           <%= link_to 'Take Test', new_question_solution_path(test.questions.sample), class: "btn btn-default" %>
+          <% else %>
+          <%= link_to 'Taken', '', class: "btn btn-warning" %>
           <% end %>
           <% if policy(test).update? %>
             <%= link_to 'Edit', edit_test_path(test), class: "btn btn-primary" %>
