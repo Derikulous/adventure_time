@@ -8,7 +8,6 @@ feature "As a user, I want to sign in to the app so that I can access my content
 
     # When the user creates a new session
     sign_in(:one)
-
     # Then the user should be signed in
     page.wont_have_content 'Invalid email or password.'
     page.must_have_content "Signed in successfully"
@@ -28,7 +27,7 @@ feature "As a user, I want to sign in to the app so that I can access my content
         uid: '12345',
         info: { nickname: 'test_linkedin_user'},
         })
-      click_on "Sign in with Linkedin"
+      first(:link, "Login with Linkedin").click
       page.must_have_content "test_Linkedin_user, you are signed in!"
     end
 
@@ -43,7 +42,7 @@ feature "As a user, I want to sign in to the app so that I can access my content
         uid: '12345',
         info: { nickname: 'test_github_user'},
         })
-      click_on "Sign in with Github"
+      click_on "Login with Github"
       page.must_have_content "test_Github_user, you are signed in!"
     end
   end
