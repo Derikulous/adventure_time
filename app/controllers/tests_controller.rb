@@ -36,9 +36,9 @@ class TestsController < ApplicationController
   def create
     @test = Test.new(test_params)
     authorize @test
-
     respond_to do |format|
       if @test.save
+        binding.pry
         format.html { redirect_to @test, notice: 'Test was successfully created.' }
         format.json { render action: 'show', status: :created, location: @test }
       else
