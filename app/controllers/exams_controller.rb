@@ -38,7 +38,6 @@ class ExamsController < ApplicationController
     authorize @exam
     respond_to do |format|
       if @exam.save
-        binding.pry
         format.html { redirect_to @exam, notice: 'Exam was successfully created.' }
         format.json { render action: 'show', status: :created, location: @exam }
       else

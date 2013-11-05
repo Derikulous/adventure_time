@@ -1,3 +1,14 @@
 one:
-  name: Example Test
-  description: This is an example test
+  question: :one
+  content: Bear
+  correct: true
+
+two:
+  question: :one
+  content: Bird
+  correct: false
+
+three:
+  question: :one
+  content: Lizard
+  correct: false

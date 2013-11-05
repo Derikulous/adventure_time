@@ -11,7 +11,6 @@ require "minitest/focus"
 require "minitest/colorize"
 
 include Devise::TestHelpers
-Rails.application.routes.default_url_options[:host] = 'localhost:3000'
 
 class ActiveSupport::TestCase
   include Capybara::DSL

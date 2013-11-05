@@ -10,10 +10,6 @@ class ExamPolicy < ApplicationPolicy
     user.admin? if user.present?
   end
 
-  def publish?
-    user.admin? if user.present?
-  end
-
   alias_method :destroy?, :create?
   alias_method :update?, :create?
 

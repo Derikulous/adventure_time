@@ -24,10 +24,10 @@ class SolutionsController < ApplicationController
     @solution = @question.solutions.new(solution_params)
     if @solution.save
       @solution.check_answer(params[:answer])
-      if @question.test.next_question(current_user)
-        redirect_to new_question_solution_path([@question.test.next_question(current_user)])
+      if @question.exam.next_question(current_user)
+        redirect_to new_question_solution_path([@question.exam.next_question(current_user)])
       else
-        redirect_to tests_path
+        redirect_to exams_path
       end
     end
   end
