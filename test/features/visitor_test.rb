@@ -11,7 +11,7 @@ feature "visitor tests for offerletter" do
 
   end
 
-  scenario "visitor visits main splash page" do
+  scenario "visitor visits about page" do
 
     #navigate to about page
     visit '/pages/about'
