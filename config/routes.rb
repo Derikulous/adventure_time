@@ -1,5 +1,5 @@
 Offerletter::Application.routes.draw do
-  resources :tests
+  resources :exams
 
   resources :questions, only: [:show, :edit, :update] do
     resources :solutions

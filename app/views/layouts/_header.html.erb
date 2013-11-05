@@ -11,7 +11,7 @@
     <div class="navbar-collapse collapse" id="navbar-main">
       <ul class="nav navbar-nav">
         <li>
-          <%= link_to 'Practice', tests_path %>
+          <%= link_to 'Practice', exams_path %>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -23,7 +23,7 @@
             <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
             <li class="divider"></li>
             <% if current_user.admin? %>
-            <li><%= link_to 'Create Test', new_test_path %></li>
+            <li><%= link_to 'Create Exam', new_exam_path %></li>
             <% end %>
             <li><%= link_to "Help", '#' %></li>
           </ul>

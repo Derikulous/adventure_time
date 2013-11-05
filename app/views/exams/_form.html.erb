@@ -1,10 +1,10 @@
-<%= form_for(@test) do |f| %>
-<% if @test.errors.any? %>
+<%= form_for(@exam) do |f| %>
+<% if @exam.errors.any? %>
 <div id="error_explanation">
-  <h2><%= pluralize(@test.errors.count, "error") %> prohibited this test from being saved:</h2>
+  <h2><%= pluralize(@exam.errors.count, "error") %> prohibited this exam from being saved:</h2>
 
   <ul>
-    <% @test.errors.full_messages.each do |msg| %>
+    <% @exam.errors.full_messages.each do |msg| %>
     <li><%= msg %></li>
     <% end %>
   </ul>
@@ -21,6 +21,6 @@
 <%= link_to_add_fields "Add Question", f, :questions %>
 
 <div class="actions">
-<%= link_to 'Back', tests_path, class: "btn btn-default form-back" %><%= f.submit "Submit", class: "btn btn-primary form-back" %>
+<%= link_to 'Back', exams_path, class: "btn btn-default form-back" %><%= f.submit "Submit", class: "btn btn-primary form-back" %>
 </div>
 <% end %>

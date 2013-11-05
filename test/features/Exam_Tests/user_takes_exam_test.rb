@@ -1,20 +1,20 @@
 require 'test_helper'
 
-feature "A user takes an offerletter test" do
-  scenario "non-user tries to take a test" do
+feature "A user takes an offerletter exam" do
+  scenario "non-user tries to take a exam" do
 
     # Given a non-user
     visit root_path
 
-    # When the visitor tries to take a test
+    # When the visitor tries to take a exam
     pending 'route is not functioning as intended'
 
-    # Then the page will not include the ability to take a test
-    page.must_not_include 'Take Test'
+    # Then the page will not include the ability to take a exam
+    page.must_not_include 'Take Exam'
   end
-    scenario "user tries to take a test" do
+    scenario "user tries to take a exam" do
 
-    # navigate tests page
+    # navigate exams page
     visit root_path
 
     # admin signs in
@@ -24,14 +24,14 @@ feature "A user takes an offerletter test" do
     page.text.must_include 'Signed in successfully'
     page.text.wont_include "Sign In"
 
-    visit tests_path
+    visit exams_path
     # Success message
-    page.text.must_include 'Take Test'
+    page.text.must_include 'Take Exam'
 
   end
-    scenario "user tries to edit test" do
+    scenario "user tries to edit exam" do
 
-    # navigate tests page
+    # navigate exams page
     visit root_path
 
     # admin signs in
@@ -41,8 +41,8 @@ feature "A user takes an offerletter test" do
     page.text.must_include 'Signed in successfully'
     page.text.wont_include "Sign In"
 
-    # click on new test
-    visit tests_path
+    # click on new exam
+    visit exams_path
 
     page.text.wont_include 'Edit'
 

@@ -4,16 +4,14 @@ feature 'As a user, I want a profile page' do
   scenario 'The profile page will have my information' do
     # Given a signed in user
     visit new_user_session_path
-    within ('#myModal') do
-      sign_in(:one)
-    end
+    sign_in(:one)
 
     # When I visit the profile page
-    visit user_path
+    click_on "Profile"
 
     # Then I should see my name
-    page.text.must_include 'Profile'
-    page.text.must_include 'Sign Out'
-    page.must_have_content 'Welcome user@example.com'
+    page.text.must_include 'Change Avatar'
+    page.text.must_include 'Update Profile'
+    page.must_have_content 'Report Card'
   end
 end

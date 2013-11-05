@@ -1,9 +1,9 @@
-class TestPolicy < ApplicationPolicy
-  attr_reader :user, :test
+class ExamPolicy < ApplicationPolicy
+  attr_reader :user, :exam
 
-  def initialize(user, test)
+  def initialize(user, exam)
     @user = user
-    @test = test
+    @exam = exam
   end
 
   def create?
