@@ -1,15 +1,19 @@
-# Offer Letter
+# Adventure Time
 
 By [Derik, James, Thanh]
 
 ## Description
 
-Technical interviews can be difficult and stressful.  OfferLetter is a technical interview simulator that covers every aspect of technical interview. This application is heavily targeted on the subject of Ruby on Rails. Test your knowledge might with some code and challenges. Understand what aspect you are weak in and need practice. This application will give you the confidence to win the job. Remember the seperation is in the preparation.
+Technical interviews can be difficult and stressful.  Adventure time is a technical interview simulator that covers every aspect of technical interview. This application is heavily targeted on the subject of Ruby on Rails.
+<br>
+
+Your character, Brook, is a recent graduate looking for jobs. He's hungry and cannot survive on instant noodles for much longer. Help him land his dream job at CodeFellows by answering interview questions from his interviewer, Ivan the Terrible. Complete all the levels to be granted your final offer letter.
 
 ## Usage
 
 Sign in with LinkedIn/GitHub/email<br>
-Select your first exam using the Practice navigation link<br>
+On the main page, choose which level of expertise you want to explore<br>
+Your character Brook is fighting for his life, so don't answer too many wrong questions or he's going to have to restart.
 Take the exam<br>
 Study accordingly<br>
 Take more exams<br>
