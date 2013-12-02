@@ -1,4 +1,4 @@
-# Haunted Letter
+# Offer Letter
 
 By [Derik, James, Thanh]
 
@@ -9,9 +9,8 @@ Technical interviews can be difficult and stressful.  OfferLetter is a technical
 ## Usage
 
 Sign in with LinkedIn/GitHub/email<br>
-Select your first challenge<br>
+Select your first exam using the Practice navigation link<br>
 Take the exam<br>
-Your character advances or dies based on your answer<br>
 Study accordingly<br>
 Take more exams<br>
 
