@@ -30,14 +30,17 @@
         </li>
         <% else %>
         <!-- Button trigger modal -->
-        <li><%= link_to "Sign In", "#signin", "data-toggle" => "modal", :class => "btn btn-clear" %></li>
+        <li>
+          <%= link_to "Sign In", "#signin", "data-toggle" => "modal", :class => "btn btn-clear" %></li>
         <!-- Modal -->
         <div class="modal fade" id="signin" tabindex="-1" role="dialog" aria-labelledby="signinLabel" aria-hidden="true">
           <div class="modal-dialog">
             <%= render "layouts/modals/signin" %>
           </div>
-        </div><!-- /.modal -->
-        <li class="create-account"><%= link_to "Create Account", "#signup", "data-toggle" => "modal", :class => "btn btn-primary" %></li>
+        </div>
+        <!-- Button trigger modal -->
+        <li class="create-account">
+          <%= link_to "Create Account", "#signup", "data-toggle" => "modal", :class => "btn btn-primary" %></li>
         <div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="signinLabel" aria-hidden="true">
           <div class="modal-dialog">
             <%= render "layouts/modals/signup" %>

@@ -1,0 +1,71 @@
+@import url("//fonts.googleapis.com/css?family=Lato:400,700,900,400italic");
+
+.background-cloud {
+  background-image: url(/assets/sky_texture.jpg);
+}
+
+.background-forest {
+  background-image: url(/assets/forest.jpg);
+}
+
+.background-image {
+  padding: 0px 40px 40px 40px;
+  background-color: #F5F5DC;
+}
+
+.remove-question {
+  margin-bottom: 13px;
+  font-size: 12px;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-left: 125px;
+}
+
+.form-back {
+  margin-top: 12px;
+  margin-right: 8px;
+}
+
+/*pref popover */
+
+.modal-dialog {
+    width: 400px;
+    text-align: center;
+    margin: auto;
+    top: 50;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.modal-content {
+    height: 500px;
+}
+.modal-header {
+    /* font-size: 40px; */
+}
+#myModalLabel {
+    line-height: 8rem;
+    font-size: 3rem;
+}
+.modal-body {
+    height: 25rem;
+}
+
+.modal-backdrop {
+  z-index: 900;
+}
+
+.left-section a {
+  font-size: 1.5em;
+}
+
+.panel-body li {
+  font-size: 1.5em;
+}
+.panel-body a {
+  font-size: 1.0em;
+}
+.list-group {
+font-weight: 10;
+}
+
