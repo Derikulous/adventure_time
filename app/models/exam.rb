@@ -7,6 +7,8 @@ class Exam < ActiveRecord::Base
 
   def next_question(user)
     if questions.size == user.questions
+      binding.pry
+      current_user.experience += self.generate_experience(current_user)
       nil
     else
       (questions - user.questions).sample
