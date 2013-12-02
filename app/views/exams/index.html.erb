@@ -5,6 +5,7 @@
       <h4>Number of Questions: <%= exam.questions.size %> </h4>
       <% if current_user.present? %>
         <h4>Your Score: <%= exam.generate_score(current_user) %> </h4>
+        <h4>Total Experience: <%= exam.generate_experience(current_user) %> </h4>
 
         <% if exam.next_question(current_user) %>
           <%= link_to 'Take Exam', new_question_solution_path(exam.questions.first), class: "btn btn-info" %>

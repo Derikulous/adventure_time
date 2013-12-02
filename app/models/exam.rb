@@ -30,4 +30,22 @@ class Exam < ActiveRecord::Base
       return ((score / questions.size.to_f) * 100).round(2).to_s + ' %'
     end
   end
+
+  def generate_experience(user)
+    experience = 0
+    t = user.questions & questions
+    if t.size == 0
+      return 'none'
+    else
+      t.each do |a|
+        s = a.solutions & user.solutions
+        s.each do |d|
+          if d.correct?
+            experience+=10
+          end
+        end
+      end
+      return ((experience / questions.size)).to_s + ' xp'
+    end
+  end
 end
