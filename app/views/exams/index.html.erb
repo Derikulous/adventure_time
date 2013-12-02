@@ -6,19 +6,19 @@
       <% if current_user.present? %>
         <h4>Your Score: <%= exam.generate_score(current_user) %> </h4>
 
-      <% if exam.next_question(current_user) %>
-        <%= link_to 'Take Exam', new_question_solution_path(exam.questions.sample), class: "btn btn-info" %>
-      <% else %>
-          <%= link_to 'Taken', '', class: "btn btn-warning" %>
-          <% end %>
+        <% if exam.next_question(current_user) %>
+          <%= link_to 'Take Exam', new_question_solution_path(exam.questions.first), class: "btn btn-info" %>
+        <% else %>
+            <%= link_to 'Retake Exam', new_question_solution_path(exam.questions.sample), class: "btn btn-warning" %>
+        <% end %>
 
-          <% if policy(exam).update? %>
-            <%= link_to 'Edit', edit_exam_path(exam), class: "btn btn-primary" %>
-          <% end %>
-          <% if policy(exam).destroy? %>
+        <% if policy(exam).update? %>
+          <%= link_to 'Edit', edit_exam_path(exam), class: "btn btn-primary" %>
+        <% end %>
+        <% if policy(exam).destroy? %>
           <%= link_to 'Destroy', exam, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
-          <% end %>
-          <% end %>
+        <% end %>
+      <% end %>
     </div>
   <% end %>
 </div>
