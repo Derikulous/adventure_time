@@ -29,14 +29,14 @@ class SolutionsController < ApplicationController
 
     if @solution.save
       if current_user.life > 0
-        if @solution.check_answer(params[:answer])
-          flash[:notice] = "Oh, that's unexpected. You're correct."
-        else
-          flash[:danger] = "Try again, sucker! Mwahaha!"
-          @solution.user.life -= 1
-          @solution.user.save
-        end
         if @question.exam.next_question(current_user)
+          if @solution.check_answer(params[:answer])
+            flash[:notice] = "Oh, that's unexpected. You're correct."
+          else
+            flash[:danger] = "Try again, sucker! Mwahaha!"
+            @solution.user.life -= 1
+            @solution.user.save
+          end
           redirect_to new_question_solution_path([@question.exam.next_question(current_user)])
         else
           @solution.user.experience += @solution.question.exam.generate_experience(current_user)
