@@ -1,26 +1,33 @@
 <div class='container'>
-  <% @exams.each do |exam| %>
-    <div class='well-middle col-lg-3 col-lg-3'>
-      <h3><%= exam.name %></h3>
-      <h4>Number of Questions: <%= exam.questions.size %> </h4>
-      <% if current_user.present? %>
-        <h4>Your Score: <%= exam.generate_score(current_user) %> </h4>
-        <h4>Total Experience: <%= exam.generate_experience(current_user) %> </h4>
+  <div class='row'>
+    <% @exams.each do |exam| %>
 
-        <% if exam.next_question(current_user) %>
-          <%= link_to 'Take Exam', new_question_solution_path(exam.questions.first), class: "btn btn-info" %>
-        <% else %>
-            <%= link_to 'Taken', '', class: "btn btn-warning" %>
-        <% end %>
 
-        <% if policy(exam).update? %>
-          <%= link_to 'Edit', edit_exam_path(exam), class: "btn btn-primary" %>
-        <% end %>
-        <% if policy(exam).destroy? %>
-          <%= link_to 'Destroy', exam, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
-        <% end %>
+    <div class='col-lg-4'>
+      <div class='well'>
+        <h3><%= exam.name %></h3>
+        <h4>Rewards:</h4>
+        <% if current_user.present? %>
+        <h4>Score: <%= exam.generate_score(current_user) %> </h4>
+        <h4>Experience: <%= exam.experience %> </h4>
+              <% if exam.next_question(current_user) %>
+        <%= link_to 'Take Exam', new_question_solution_path(exam.questions.first), class: "btn btn-info" %>
+      <% else %>
+        <%= link_to 'Taken', '', class: "btn btn-warning" %>
+      <% end %>
+
+      <% if policy(exam).update? %>
+        <%= link_to 'Edit', edit_exam_path(exam), class: "btn btn-primary" %>
+      <% end %>
+      <% if policy(exam).destroy? %>
+        <%= link_to 'Destroy', exam, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+      <% end %>
+      </div>
+
       <% end %>
     </div>
-  <% end %>
+    <% end %>
+  </div>
+
 </div>
 
