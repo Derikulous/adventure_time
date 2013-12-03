@@ -24,19 +24,19 @@
           </tr>
         </thead>
         <% @user.solutions.each do |solution| %>
-        <thead>
+        <tbody>
           <tr>
-            <th><%= solution.question.exam.name %></th>
-            <th><%= solution.question.content %></th>
-            <th><% if solution.correct %>
+            <td><%= solution.question.exam.name %></td>
+            <td><%= solution.question.content %></td>
+            <td><% if solution.correct %>
               Correct<br/ >
               <% else %>
               Incorrect<br/ >
-            </th>
+            </td>
             <% end %>
             <% end %>
           </tr>
-        </thead>
+        </tbody>
       </table>
     </div>
   </div>
