@@ -26,10 +26,10 @@ class UsersController < ApplicationController
   end
 
   def revive
-    @user = User.find(current_user)
-    @user.life = 4
-    @user.experience = 0
-    if @user.save
+    current_user.life = 4
+    current_user.experience = 0
+    if current_user.save
+      flash[:notice] = "You have been successfully revived! Life has been set to 4 and experience is now 0"
       redirect_to root_path
     end
   end
