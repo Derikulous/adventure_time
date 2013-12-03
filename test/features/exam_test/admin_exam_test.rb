@@ -105,6 +105,5 @@ feature "admin exams for offerletter" do
 
     # Exam page must show score
     page.text.must_include '100'
-
   end
 end

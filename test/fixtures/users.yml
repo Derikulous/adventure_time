@@ -7,5 +7,6 @@ one:
 two:
   name: No Name
   email: james@tired.com
+  experience: 3
   encrypted_password: <%= User.new.send(:password_digest, 'password') %>
   role: user
