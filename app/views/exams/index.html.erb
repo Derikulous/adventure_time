@@ -1,3 +1,4 @@
+<body id="mountain">
 <div class='container'>
   <div class='row'>
     <% @exams.each do |exam| %>
@@ -10,18 +11,18 @@
         <% if current_user.present? %>
         <h4>Score: <%= exam.generate_score(current_user) %> </h4>
         <h4>Experience: <%= exam.experience %> </h4>
-              <% if exam.next_question(current_user) %>
+        <% if exam.next_question(current_user) %>
         <%= link_to 'Do Quest', new_question_solution_path(exam.questions.first), class: "btn btn-info" %>
-      <% else %>
+        <% else %>
         <%= link_to 'Done', '', class: "btn btn-warning" %>
-      <% end %>
+        <% end %>
 
-      <% if policy(exam).update? %>
+        <% if policy(exam).update? %>
         <%= link_to 'Edit', edit_exam_path(exam), class: "btn btn-primary" %>
-      <% end %>
-      <% if policy(exam).destroy? %>
+        <% end %>
+        <% if policy(exam).destroy? %>
         <%= link_to 'Destroy', exam, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
-      <% end %>
+        <% end %>
       </div>
 
       <% end %>
@@ -30,4 +31,4 @@
   </div>
 
 </div>
-
+</body>

@@ -10,7 +10,7 @@ body {
   padding: 5px 15px;
 }
 #mountain {
-  background: url(bgimage.jpg) no-repeat center center fixed;
+  background: url(map.png) no-repeat center center fixed;
   background-size: cover;
 }
 .chatbubble {
@@ -20,4 +20,9 @@ body {
 
 	text-align: center;
 	vertical-align: center;
+}
+
+#forest {
+  background: url(forest.jpeg) no-repeat center center fixed;
+  background-size: cover;
 }
