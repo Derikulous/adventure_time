@@ -48,4 +48,8 @@ class Exam < ActiveRecord::Base
       return ((experience / questions.size))
     end
   end
+
+  def generate_progress(user)
+    ((user.questions.where(exam_id: self.id).length.to_f) / (questions.size)) * 100
+  end
 end

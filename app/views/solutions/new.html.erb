@@ -2,6 +2,9 @@
 	<div class="well">
 		<div class="row">
 			<div class="col-md-12 text-right">
+        <div class="progress progress-striped active">
+           <div class="progress-bar", style="width:<%= @progress %>%"></div>
+        </div>
 				<% if current_user.life == 4 %>
 		      <%= image_tag "life/life4.png" %>
 		    <% elsif current_user.life == 3 %>
@@ -31,4 +34,5 @@
 		</div>
 	</div>
 </div>
+
 
