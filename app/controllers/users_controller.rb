@@ -25,6 +25,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def revive
+    @user = User.find(current_user)
+    @user.life = 4
+    @user.experience = 0
+    if @user.save
+      redirect_to root_path
+    end
+  end
+
   private
 
   def user_params

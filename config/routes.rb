@@ -8,7 +8,11 @@ Offerletter::Application.routes.draw do
   devise_for :users,
              controllers: {omniauth_callbacks: "omniauth_callbacks"}
 
-  resources :users , only: [:show, :edit, :update, :index]
+  resources :users , only: [:show, :edit, :update, :index] do
+    get :revive
+  end
+
+  #post 'users/:id/revive' => 'users#revive', as: :users_revive
 
   root to: 'welcome#index'
 
