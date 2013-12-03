@@ -90,7 +90,7 @@ feature "admin exams for Brook and Ivans adventure" do
     visit exams_path
 
     # click on edit exam
-    click_on 'Take Exam'
+    click_on 'Begin Quest'
 
     # Exam must show content
     page.text.must_include 'Which of the following is a mammal?'
@@ -101,6 +101,8 @@ feature "admin exams for Brook and Ivans adventure" do
     # click on next question
     click_on 'Next Question'
     page.text.wont_include 'gameover'
+    page.text.must_include 'Continue'
+    click_on 'Continue'
 
     # Exam page must show score
     page.text.must_include '100'

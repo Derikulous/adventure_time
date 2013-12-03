@@ -10,7 +10,7 @@ feature "A visitor exams for Brook and Ivans adventure" do
     visit exams_path
 
     # Then the page will not include the ability to take a exam
-    page.text.wont_include 'Take Exam'
+    page.text.wont_include 'Begin Quest'
   end
 
   scenario "visitor tries to create a exam" do
