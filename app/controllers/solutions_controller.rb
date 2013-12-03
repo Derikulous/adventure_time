@@ -14,6 +14,7 @@ class SolutionsController < ApplicationController
     if current_user.life == 0
       render 'gameover'
     end
+    @progress = @question.exam.generate_progress(current_user)
     @solution = @question.solutions.new
   end
 
