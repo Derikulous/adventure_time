@@ -1,36 +1,43 @@
 <div class="container">
-	<div class="well">
-		<div class="row">
-			<div class="col-md-12 text-right">
-        <div class="progress progress-striped active">
-           <div class="progress-bar", style="width:<%= @progress %>%"></div>
-        </div>
-				<% if current_user.life == 4 %>
-		      <%= image_tag "life/life4.png" %>
-		    <% elsif current_user.life == 3 %>
-		      <%= image_tag "life/life3.png" %>
-		    <% elsif current_user.life == 2 %>
-		      <%= image_tag "life/life2.png" %>
-		    <% else %>
-		      <%= image_tag "life/life1.png" %>
-		    <% end %>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-12">
-				<div class="pull-left">
-					<%= render 'enemy' %>
+	<div class="panel panel-default">
+    <div class="panel-heading">
+    	<div class="row">
+    		<div class="col-md-6">
+	      	<div class="progress progress-striped active">
+	        	<div class="progress-bar vertical-center", style="width:<%= @progress %>%"></div>
+	      	</div>
+      	</div>
+      	<div class="col-md-6">
+      		<div class="pull-right">
+						<% if current_user.life == 4 %>
+				      <%= image_tag "life/life4.png" %>
+				    <% elsif current_user.life == 3 %>
+				      <%= image_tag "life/life3.png" %>
+				    <% elsif current_user.life == 2 %>
+				      <%= image_tag "life/life2.png" %>
+				    <% else %>
+				      <%= image_tag "life/life1.png" %>
+				    <% end %>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+      <div class="panel-body">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="pull-left">
+						<%= render 'enemy' %>
+					</div>
+					<div class="pull-right">
+						<%= render 'character' %>
+					</div>
 				</div>
-				<div class="pull-right">
-					<%= render 'character' %>
-				</div>
 			</div>
-		</div>
 		<div class="row">
 			<h3><%= @question.content %></h3>
 			<div class="col-md-12">
 				<%= render 'form' %>
-			</div>
+      </div>
 		</div>
 	</div>
 </div>

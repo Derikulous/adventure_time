@@ -72,7 +72,7 @@ font-weight: 10;
 .vertical-center {
   text-align: center;
   margin: auto;
-  top: 50;
+  top: 0;
   bottom: 0;
   left: 0;
   right: 0;
