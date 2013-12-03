@@ -29,9 +29,9 @@ class SolutionsController < ApplicationController
 
     if @solution.save
       if @solution.check_answer(params[:answer])
-        flash[:notice] = "Yay you got it"
+        flash[:notice] = "Oh, that's unexpected. That's the correct answer."
       else
-        flash[:danger] = "Boo you're dumb"
+        flash[:danger] = "Try again, sucker! Mwahaha!"
         @solution.user.life -= 1
         @solution.user.save
       end
