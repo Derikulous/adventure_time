@@ -42,7 +42,10 @@ class SolutionsController < ApplicationController
           @solution.user.experience += @solution.question.exam.generate_experience(current_user)
           @solution.user.save
           generate_victory_message
-          render 'win'
+          respond_to do |format|
+            format.html { render 'win' }
+            format.js
+          end
         end
       else
         render 'gameover'
