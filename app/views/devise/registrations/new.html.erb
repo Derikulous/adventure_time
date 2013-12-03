@@ -14,6 +14,8 @@
     <%= f.password_field :password_confirmation, class: "form-control" %></div>
 
     </br>
+    <% f.hidden_field :life, value: 4 %>
+    <% f.hidden_field :experience, value: 0 %>
 
     <div><%= f.submit "Sign up", class: "btn btn-block" %></div>
     <% end %>
