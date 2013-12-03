@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="field">
+    <% if @solution.check_answer(params[:answer])%>
+      <%= image_tag "brook_normal.png" %>
+    <% else %>
+      <%= image_tag "brook_crap.png" %>
+    <% end %>
     <%= f.hidden_field :question_id, value: @question.id %>
     <%= f.hidden_field :user_id, value: current_user.id %>
     <%= f.hidden_field :correct, value: false %>
