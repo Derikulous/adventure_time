@@ -12,3 +12,18 @@ three:
   question: :one
   content: Lizard
   correct: false
+
+# four:
+#   question: :two
+#   content: 'Yes'
+#   correct: true
+
+# five:
+#   question: :two
+#   content: 'No'
+#   correct: false
+
+# six:
+#   question: :two
+#   content: Maybe
+#   correct: false

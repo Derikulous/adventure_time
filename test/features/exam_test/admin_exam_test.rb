@@ -1,6 +1,6 @@
 require 'test_helper'
 
-feature "admin exams for offerletter" do
+feature "admin exams for Brook and Ivans adventure" do
   scenario "admin tries to create a exam" do
 
     # navigate exams page
@@ -27,7 +27,6 @@ feature "admin exams for offerletter" do
 
     # Success message
     page.text.must_include 'Exam was successfully created'
-
   end
 
   scenario "admin tries to edit a exam" do
@@ -58,7 +57,6 @@ feature "admin exams for offerletter" do
     page.text.must_include 'Not the same question'
     page.text.wont_include 'This is an example exam'
     page.text.wont_include '100'
-
   end
 
   scenario "admin tries to delete a exam" do
@@ -80,7 +78,7 @@ feature "admin exams for offerletter" do
 
   end
 
-  scenario "admin tries to take a exam" do
+  scenario "admin tries to take an exam" do
 
     # navigate exams page
     visit root_path
@@ -102,6 +100,7 @@ feature "admin exams for offerletter" do
 
     # click on next question
     click_on 'Next Question'
+    page.text.wont_include 'gameover'
 
     # Exam page must show score
     page.text.must_include '100'
