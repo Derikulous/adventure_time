@@ -11,7 +11,11 @@ class SolutionsController < ApplicationController
   end
 
   def new
-  @solution = @question.solutions.new
+    # if current_user.life == 0
+    #   redirect_to root_path
+    #   flash[:danger] = "GAME OVER"
+    # end
+    @solution = @question.solutions.new
   end
 
   def edit
@@ -28,6 +32,8 @@ class SolutionsController < ApplicationController
         flash[:notice] = "Yay you got it"
       else
         flash[:danger] = "Boo you're dumb"
+        @solution.user.life -= 1
+        @solution.user.save
       end
       if @question.exam.next_question(current_user)
         redirect_to new_question_solution_path([@question.exam.next_question(current_user)])
