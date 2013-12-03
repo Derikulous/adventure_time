@@ -2,10 +2,9 @@
 	<div class="well col-md-6 col-md-offset-3">
 		<div class="row">
 			<div class="text-center">
-
 				<h1>GAME OVER</h1>
 				<center><%= image_tag "brook/brook_gameover.png", :class => "img-responsive" %></center>
-<!-- 				<%= link_to "Revive", :controller => "user", :action => "revive", class: "btn btn-primary" %> -->
+				<%= link_to "Revive", users_path(:user => {:life => 4} ), :method => :put, class: "btn btn-primary" %>
 			</div>
 		</div>
 	</div>

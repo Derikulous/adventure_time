@@ -25,13 +25,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def revive
-    @user = User.find(params[:id])
-    @user.life = 4
-    @user.save
-    redirect_to root_path
-  end
-
   private
 
   def user_params

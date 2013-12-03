@@ -34,21 +34,6 @@
     <%= render 'question_fields', f: builder %>
     <% end %>
 
-<div class="field">
-  <%= f.text_field :name, class:"form-control", placeholder: "name" %>
-</div>
-
-<div class="field">
-  <%= f.label :experience, "Experience points" %>
-  <%= f.number_field :experience, class:"form-control", placeholder: "Values from 1 to 1000"  %>
-  <br />
-</div>
-
-<p> Questions: </p>
-<%= f.fields_for :questions do |builder| %>
-  <%= render 'question_fields', f: builder %>
-<% end %>
-
 <%= link_to_add_fields "Add Question", f, :questions %>
 
     <div class="actions">
