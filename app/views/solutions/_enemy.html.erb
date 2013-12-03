@@ -1,0 +1,9 @@
+<% if current_user.life == 4 %>
+	<%= image_tag "ivan/ivan_normal.png", :class => "img-responsive" %>
+<% elsif current_user.life == 3 %>
+	<%= image_tag "ivan/ivan_life3.png", :class => "img-responsive" %>
+<% elsif current_user.life == 2 %>
+	<%= image_tag "ivan/ivan_life2.png", :class => "img-responsive" %>
+<% else %>
+	<%= image_tag "ivan/ivan_life1.png", :class => "img-responsive" %>
+<% end %>

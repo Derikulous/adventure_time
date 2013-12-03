@@ -11,7 +11,12 @@ class SolutionsController < ApplicationController
   end
 
   def new
-  @solution = @question.solutions.new
+    # if current_user.life == 0
+    #   redirect_to root_path
+    #   flash[:danger] = "GAME OVER"
+    # end
+    @solution = @question.solutions.new
+    render
   end
 
   def edit
@@ -25,9 +30,11 @@ class SolutionsController < ApplicationController
 
     if @solution.save
       if @solution.check_answer(params[:answer])
-        flash[:notice] = "Yay you got it"
+        flash[:notice] = "Oh, that's unexpected. You're correct."
       else
-        flash[:danger] = "Boo you're dumb"
+        flash[:danger] = "Try again, sucker! Mwahaha!"
+        @solution.user.life -= 1
+        @solution.user.save
       end
       if @question.exam.next_question(current_user)
         redirect_to new_question_solution_path([@question.exam.next_question(current_user)])
@@ -41,7 +48,8 @@ class SolutionsController < ApplicationController
 
   private
   def solution_params
-    params.require(:solution).permit(:id, :question_id, :correct, :user_id, :question_attributes => [ :content, :question_id ] )
+    params.require(:solution).permit(:id, :question_id, :correct, :user_id,
+      :question_attributes => [ :content, :question_id ] )
   end
 
   def load_question

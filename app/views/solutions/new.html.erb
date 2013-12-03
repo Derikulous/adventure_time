@@ -1,8 +1,34 @@
 <div class="container">
-<div class="well-test col-md-6">
-<h3><%= @question.content %></h3>
-
-<%= render 'form' %>
-</div>
+	<div class="well">
+		<div class="row">
+			<div class="col-md-12 text-right">
+				<% if current_user.life == 4 %>
+		      <%= image_tag "life/life4.png" %>
+		    <% elsif current_user.life == 3 %>
+		      <%= image_tag "life/life3.png" %>
+		    <% elsif current_user.life == 2 %>
+		      <%= image_tag "life/life2.png" %>
+		    <% else %>
+		      <%= image_tag "life/life1.png" %>
+		    <% end %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="pull-left">
+					<%= render 'enemy' %>
+				</div>
+				<div class="pull-right">
+					<%= render 'character' %>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<h3><%= @question.content %></h3>
+			<div class="col-md-12">
+				<%= render 'form' %>
+			</div>
+		</div>
+	</div>
 </div>
 

@@ -1,7 +1,7 @@
 class Exam < ActiveRecord::Base
   has_many :questions, :dependent => :destroy
   accepts_nested_attributes_for :questions, allow_destroy: true
-
+  validates :experience, numericality: { greater_than_or_equal_to: 1, less_than_or_equal_to: 1000 }
   validates :name, presence: true
   validates :questions, presence: true
 
