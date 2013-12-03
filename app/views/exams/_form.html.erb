@@ -11,6 +11,28 @@
 </div>
 <% end %>
 
+<div class="container">
+  <h3 style="text-align: center;">New Exam</h3>
+  <div class="well col-md-8 col-md-offset-2">
+
+    <div class="field">
+      <%= f.text_field :name, class:"form-control", placeholder: "name" %>
+    </div>
+    <br />
+
+    <fieldform class="col-md-12 col-md-offset-3">
+      <%= f.label :experience, "Experience points" %>
+      <%= f.number_field :experience, class:"form-control-right", placeholder: "Values from 1 to 1000"  %>
+      <%= f.label :level, "Difficulty level" %>
+      <%= f.select :level, 1..9, class:"form-control" %>
+    </fieldform>
+    <br>
+    <br>
+
+
+    <%= f.fields_for :questions do |builder| %>
+    <%= render 'question_fields', f: builder %>
+    <% end %>
 
 <div class="field">
   <%= f.text_field :name, class:"form-control", placeholder: "name" %>
@@ -29,7 +51,9 @@
 
 <%= link_to_add_fields "Add Question", f, :questions %>
 
-<div class="actions">
-  <%= link_to 'Back', exams_path, class: "btn btn-default form-back" %><%= f.submit "Submit", class: "btn btn-primary form-back" %>
-</div>
-<% end %>
+    <div class="actions">
+      <%= link_to 'Back', exams_path, class: "btn btn-default form-back" %><%= f.submit "Submit", class: "btn btn-primary form-back" %>
+    </div>
+    <% end %>
+  </div> <!-- well -->
+</div> <!-- container -->

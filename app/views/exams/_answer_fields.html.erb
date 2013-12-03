@@ -1,8 +1,8 @@
 <fieldset>
-  <%= f.text_field :content, class:"form-control", placeholder: "write answer here" %>
+  <%= f.text_field :content, class:"form-control", placeholder: "Insert answer" %>
   <%= f.hidden_field :_destroy %>
   <%= f.check_box :correct %>
   <%= f.label :correct, "correct answer?"%>
-  <%= link_to "remove", '#', class: "remove_fields" %>
+  <%= link_to "remove answer", '#', class: "remove_fields pull-right btn btn-danger btn-xs" %>
 </fieldset>
 

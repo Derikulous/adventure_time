@@ -78,3 +78,12 @@ font-weight: 10;
   right: 0;
 }
 
+.circle-grav {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.border-none {
+  border: none;
+}
