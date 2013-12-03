@@ -16,6 +16,7 @@ class SolutionsController < ApplicationController
     #   flash[:danger] = "GAME OVER"
     # end
     @solution = @question.solutions.new
+    render
   end
 
   def edit

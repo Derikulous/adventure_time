@@ -13,3 +13,11 @@ body {
   background: url(bgimage.jpg) no-repeat center center fixed;
   background-size: cover;
 }
+.chatbubble {
+	background-image: url(chatbubble.png);
+	background-size: 100% 100%;
+	padding: 10px 0px 10px 40px;
+
+	text-align: center;
+	vertical-align: center;
+}
