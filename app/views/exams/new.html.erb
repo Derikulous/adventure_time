@@ -2,8 +2,6 @@
   <div class="well-test col-md-6">
     <% if current_user.try(:admin?) %>
 
-    <h3 style="text-align:center">New Exam</h3>
-
     <%= render 'form' %>
 
     <% end %>
