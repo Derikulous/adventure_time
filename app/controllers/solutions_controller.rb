@@ -16,7 +16,6 @@ class SolutionsController < ApplicationController
     #   flash[:danger] = "GAME OVER"
     # end
     @solution = @question.solutions.new
-    render
   end
 
   def edit
@@ -41,7 +40,7 @@ class SolutionsController < ApplicationController
       else
         @solution.user.experience += @solution.question.exam.generate_experience(current_user)
         @solution.user.save
-        redirect_to exams_path
+        render 'win'
       end
     end
   end
