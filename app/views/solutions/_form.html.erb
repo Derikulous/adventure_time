@@ -12,11 +12,6 @@
   <% end %>
 
   <div class="field">
-    <% if current_user.life > 2 %>
-      <%= image_tag "brook_normal.png" %>
-    <% else %>
-      <%= image_tag "brook_crap.png" %>
-    <% end %>
     <%= f.hidden_field :question_id, value: @question.id %>
     <%= f.hidden_field :user_id, value: current_user.id %>
     <%= f.hidden_field :correct, value: false %>
@@ -25,7 +20,7 @@
     <% count = 1 %>
     <% @question.answers.each do |answer| %>
       <div class="radio">
-      <h4><%= radio_button_tag "answer", count %> <%= answer.content %></h4>
+      <h3><%= radio_button_tag "answer", count %> <%= answer.content %></h3>
       <% count+=1 %>
       </div>
     <% end %>
