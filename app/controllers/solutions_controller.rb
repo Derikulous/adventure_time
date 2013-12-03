@@ -11,7 +11,7 @@ class SolutionsController < ApplicationController
   end
 
   def new
-    if current_user.life == 0
+    if current_user.life <= 0
       render 'gameover'
     end
     @solution = @question.solutions.new
@@ -27,20 +27,24 @@ class SolutionsController < ApplicationController
     @solution = @question.solutions.new(solution_params)
 
     if @solution.save
-      if @solution.check_answer(params[:answer])
-        flash[:notice] = "Oh, that's unexpected. You're correct."
+      if current_user.life > 0
+        if @solution.check_answer(params[:answer])
+          flash[:notice] = "Oh, that's unexpected. You're correct."
+        else
+          flash[:danger] = "Try again, sucker! Mwahaha!"
+          @solution.user.life -= 1
+          @solution.user.save
+        end
+        if @question.exam.next_question(current_user)
+          redirect_to new_question_solution_path([@question.exam.next_question(current_user)])
+        else
+          @solution.user.experience += @solution.question.exam.generate_experience(current_user)
+          @solution.user.save
+          generate_victory_message
+          render 'win'
+        end
       else
-        flash[:danger] = "Try again, sucker! Mwahaha!"
-        @solution.user.life -= 1
-        @solution.user.save
-      end
-      if @question.exam.next_question(current_user)
-        redirect_to new_question_solution_path([@question.exam.next_question(current_user)])
-      else
-        @solution.user.experience += @solution.question.exam.generate_experience(current_user)
-        @solution.user.save
-        generate_victory_message
-        render 'win'
+        render 'gameover'
       end
     end
   end
@@ -62,6 +66,8 @@ class SolutionsController < ApplicationController
       @victory = 'Perfect Victory!'
     elsif @score > 80
       @victory = 'Good Victory!'
+    elsif @score == 0
+      @victory = 'Barely Made It!'
     else
       @victory = 'Close Victory!'
     end
