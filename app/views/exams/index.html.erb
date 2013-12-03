@@ -10,7 +10,7 @@
         <% if exam.next_question(current_user) %>
           <%= link_to 'Take Exam', new_question_solution_path(exam.questions.first), class: "btn btn-info" %>
         <% else %>
-            <%= link_to 'Retake Exam', new_question_solution_path(exam.questions.sample), class: "btn btn-warning" %>
+            <%= link_to 'Taken', '', class: "btn btn-warning" %>
         <% end %>
 
         <% if policy(exam).update? %>
