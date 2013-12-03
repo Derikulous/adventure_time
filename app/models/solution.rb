@@ -8,6 +8,9 @@ class Solution < ActiveRecord::Base
     if q == find_answer.to_s
       self.correct = true
       self.save
+      return true
+    else
+      return false
     end
   end
 

@@ -9,7 +9,7 @@ class Exam < ActiveRecord::Base
     if questions.size == user.questions
       nil
     else
-      (questions - user.questions).sample
+      (questions - user.questions).first
     end
   end
 
