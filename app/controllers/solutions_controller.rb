@@ -29,7 +29,7 @@ class SolutionsController < ApplicationController
 
     if @solution.save
       if @solution.check_answer(params[:answer])
-        flash[:notice] = "Oh, that's unexpected. That's the correct answer."
+        flash[:notice] = "Oh, that's unexpected. You're correct."
       else
         flash[:danger] = "Try again, sucker! Mwahaha!"
         @solution.user.life -= 1
@@ -47,7 +47,8 @@ class SolutionsController < ApplicationController
 
   private
   def solution_params
-    params.require(:solution).permit(:id, :question_id, :correct, :user_id, :question_attributes => [ :content, :question_id ] )
+    params.require(:solution).permit(:id, :question_id, :correct, :user_id,
+      :question_attributes => [ :content, :question_id ] )
   end
 
   def load_question
