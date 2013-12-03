@@ -1,0 +1,23 @@
+<div><h1>Leaderboard</h1></div>
+
+<table class='table table-striped table-bordered table-hover'>
+  <thead>
+    <tr>
+      <th>Rank</th>
+      <th>Name</th>
+      <th>Experience Pts</th>
+    </tr>
+  </thead>
+    <tbody>
+      <% count = 1 %>
+      <% @users.each do |user| %>
+      <tr>
+          <td><%= count %></td>
+          <% count += 1 %>
+          <td><%= link_to user.email, user_path(user) %></td>
+          <td><%= user.experience %></td>
+      </tr>
+      <% end %>
+      </tr>
+    </tbody>
+</table>
