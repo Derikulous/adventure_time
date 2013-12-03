@@ -40,6 +40,7 @@ class SolutionsController < ApplicationController
       else
         @solution.user.experience += @solution.question.exam.generate_experience(current_user)
         @solution.user.save
+        generate_victory_message
         render 'win'
       end
     end
@@ -53,5 +54,17 @@ class SolutionsController < ApplicationController
 
   def load_question
     @question = Question.find(params[:question_id])
+  end
+
+  def generate_victory_message
+    @score = @solution.question.exam.generate_score(current_user)
+    @experience = @solution.question.exam.generate_experience(current_user)
+    if @score == 100
+      @victory = 'Perfect Victory!'
+    elsif @score > 80
+      @victory = 'Good Victory!'
+    else
+      @victory = 'Close Victory!'
+    end
   end
 end

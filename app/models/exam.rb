@@ -27,7 +27,7 @@ class Exam < ActiveRecord::Base
           end
         end
       end
-      return ((score / questions.size.to_f) * 100).round(2).to_s + ' %'
+      return ((score / questions.size.to_f) * 100).round(2)
     end
   end
 
