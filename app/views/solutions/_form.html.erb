@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    <% if @solution.check_answer(params[:answer])%>
+    <% if current_user.life > 2 %>
       <%= image_tag "brook_normal.png" %>
     <% else %>
       <%= image_tag "brook_crap.png" %>
