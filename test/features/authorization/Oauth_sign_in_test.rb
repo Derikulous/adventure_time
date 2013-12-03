@@ -55,4 +55,22 @@ feature "As a user, I want to sign in to the app so that I can access my content
 
     page.must_have_content "you are signed in!"
   end
+
+  scenario 'a user fails to sign in' do
+    # a user tries to sign in
+    visit root_path
+    click_on "Sign In"
+
+    # When the incorrect information is supplied
+      within(:xpath, "//*[@id='signin']/div/div") do
+      fill_in "email", with: 'oh@no.com'
+      fill_in "password", with: ""
+      click_on "Sign in"
+    end
+
+    # Then the user should not be signed in
+    page.must_have_content 'Invalid email or password.'
+    page.wont_have_content "Signed in successfully"
+    page.must_have_content "Sign In"
+  end
 end

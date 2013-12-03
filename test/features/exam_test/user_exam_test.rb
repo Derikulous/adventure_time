@@ -16,7 +16,10 @@ feature "A user takes an offerletter exam" do
     visit new_exam_path
 
     # users are not authorized to create exams
-    page.text.must_include 'You are not authorized'
+    page.text.must_include 'You are not authorized to view this page.'
+
+    # and the user is redirected to the root_path
+    page.text.must_include 'Sign Out'
 
   end
   scenario "user tries to take a exam" do
