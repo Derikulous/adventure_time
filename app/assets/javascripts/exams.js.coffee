@@ -10,6 +10,8 @@ ready = ->
     $(this).before($(this).data('fields').replace(regexp, time))
     event.preventDefault()
 
+  $("#fade").addClass("load");
+
  $(document).ready(ready)
  $(document).on('page:load', ready)
 

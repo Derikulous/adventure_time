@@ -1,6 +1,6 @@
 require 'test_helper'
 
-feature "A visitor exams for offerletter" do
+feature "A visitor exams for Brook and Ivans adventure" do
   scenario "non-user tries to take a exam" do
 
     # Given a non-user
@@ -11,8 +11,6 @@ feature "A visitor exams for offerletter" do
 
     # Then the page will not include the ability to take a exam
     page.text.wont_include 'Take Exam'
-
-
   end
 
   scenario "visitor tries to create a exam" do
@@ -31,7 +29,6 @@ feature "A visitor exams for offerletter" do
 
     # visitors are not allowed to delete exams
     page.text.wont_include 'Edit'
-
   end
 
   scenario "visitor tries to destroy exam" do
@@ -41,7 +38,6 @@ feature "A visitor exams for offerletter" do
 
     # visitors are not allowed to delete exams
     page.text.wont_include 'Destroy'
-
   end
 
   scenario "visitor navigates to random page" do
@@ -51,7 +47,6 @@ feature "A visitor exams for offerletter" do
 
     # visitors are not allowed to delete exams
     page.text.must_include "Sorry, we couldn't find that page"
-
   end
 
 end
