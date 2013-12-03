@@ -22,8 +22,13 @@ class SolutionsController < ApplicationController
 
   def create
     @solution = @question.solutions.new(solution_params)
+
     if @solution.save
-      @solution.check_answer(params[:answer])
+      if @solution.check_answer(params[:answer])
+        flash[:notice] = "Yay you got it"
+      else
+        flash[:notice] = "Boo your dumb"
+      end
       if @question.exam.next_question(current_user)
         redirect_to new_question_solution_path([@question.exam.next_question(current_user)])
       else
