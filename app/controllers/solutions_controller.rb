@@ -11,7 +11,7 @@ class SolutionsController < ApplicationController
   end
 
   def new
-    if current_user.life <= 0
+    if current_user.life == 0
       render 'gameover'
     end
     @solution = @question.solutions.new
