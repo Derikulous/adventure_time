@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131202222632) do
+ActiveRecord::Schema.define(version: 20131203012311) do
 
   create_table "answers", force: true do |t|
     t.integer  "question_id"
@@ -67,9 +67,9 @@ ActiveRecord::Schema.define(version: 20131202222632) do
     t.string   "uid"
     t.string   "name"
     t.string   "role"
-    t.integer  "experience"
     t.integer  "level"
-    t.integer  "life"
+    t.integer  "experience",             default: 0
+    t.integer  "life",                   default: 4
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
