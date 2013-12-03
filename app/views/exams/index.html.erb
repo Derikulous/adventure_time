@@ -11,9 +11,9 @@
         <h4>Score: <%= exam.generate_score(current_user) %> </h4>
         <h4>Experience: <%= exam.experience %> </h4>
               <% if exam.next_question(current_user) %>
-        <%= link_to 'Take Exam', new_question_solution_path(exam.questions.first), class: "btn btn-info" %>
+        <%= link_to 'Do Quest', new_question_solution_path(exam.questions.first), class: "btn btn-info" %>
       <% else %>
-        <%= link_to 'Taken', '', class: "btn btn-warning" %>
+        <%= link_to 'Done', '', class: "btn btn-warning" %>
       <% end %>
 
       <% if policy(exam).update? %>
