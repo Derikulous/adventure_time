@@ -2438,7 +2438,7 @@ fieldset[disabled] .btn-default.active {
 .btn-primary {
   color: #ffffff;
   background-color: #008cba;
-  border-color: #008cba;
+  border-color: #0079a1;
 }
 
 .btn-primary:hover,
@@ -5743,7 +5743,7 @@ a.thumbnail.active {
 
 .progress {
   height: 21px;
-  margin-bottom: 21px;
+  margin-bottom: 3px;
   overflow: hidden;
   background-color: #f5f5f5;
   border-radius: 0;

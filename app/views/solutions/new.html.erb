@@ -2,13 +2,14 @@
 	<div class="panel panel-default">
     <div class="panel-heading">
     	<div class="row">
-    		<div class="col-md-6">
+    		<div class="col-md-10">
 	      	<div class="progress progress-striped active">
 	        	<div class="progress-bar", style="width:<%= @progress %>%"></div>
 	      	</div>
       	</div>
-      	<div class="col-md-6">
-      		<div class="pull-right">
+      	<div class="col-md-2">
+      	  <div class="pull-right">
+      	  	Lives:
 						<% if current_user.life == 4 %>
 				      <%= image_tag "life/life4.png" %>
 				    <% elsif current_user.life == 3 %>
@@ -20,7 +21,7 @@
 				    <% end %>
     			</div>
     		</div>
-    	</div>
+      </div>
     </div>
       <div class="panel-body" id="fade">
 			<div class="row">

@@ -5,7 +5,7 @@ class ExamsController < ApplicationController
   # GET /exams
   # GET /exams.json
   def index
-    @exams = policy_scope(Exam)
+    @exams = policy_scope(Exam).sort! { |a,b| a.level <=> b.level }
   end
 
   # GET /exams/1
