@@ -45,35 +45,35 @@ class User < ActiveRecord::Base
   end
 
   def update_level
-    if self.experience >= 128000 && self.level != 9
+    if self.experience >= 20000 && self.level != 9
       self.level = 9
       self.save
       return true
-    elsif self.experience >= 64000 && self.level != 8
+    elsif self.experience >= 10000 && self.level != 8
       self.level = 8
       self.save
       return true
-    elsif self.experience >= 32000 && self.level != 7
+    elsif self.experience >= 8000 && self.level != 7
       self.level = 7
       self.save
       return true
-    elsif self.experience >= 16000 && self.level != 6
+    elsif self.experience >= 5000 && self.level != 6
       self.level = 6
       self.save
       return true
-    elsif self.experience >= 8000 && self.level != 5
+    elsif self.experience >= 2000 && self.level != 5
       self.level = 5
       self.save
       return true
-    elsif self.experience >= 4000 && self.level != 4
+    elsif self.experience >= 1000 && self.level != 4
       self.level = 4
       self.save
       return true
-    elsif self.experience >= 2000 && self.level != 3
+    elsif self.experience >= 500 && self.level != 3
       self.level = 3
       self.save
       return true
-    elsif self.experience >= 1000 && self.level != 2
+    elsif self.experience >= 100 && self.level != 2
       self.level = 2
       self.save
       return true
