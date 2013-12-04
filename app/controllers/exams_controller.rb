@@ -5,7 +5,11 @@ class ExamsController < ApplicationController
   # GET /exams
   # GET /exams.json
   def index
-    @exams = Exam.all
+    if current_user.present?
+      @exams = Exam.where(level: current_user.level)
+    else
+      @exams = Exam.where(level: 1)
+    end
   end
 
   # GET /exams/1
