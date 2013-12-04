@@ -27,9 +27,13 @@ class UsersController < ApplicationController
 
   def revive
     current_user.life = 4
-    current_user.experience = 0
+    if current_user.experience >= 1000
+      current_user.experience -= 1000
+    else
+      current_user.experience =0
+    end
     if current_user.save
-      flash[:notice] = "You have been successfully revived! Life has been set to 4 and experience is now 0"
+      flash[:notice] = "You have been successfully revived! Life has been set to 4, experience has been decreased by 1000"
       redirect_to root_path
     end
   end
