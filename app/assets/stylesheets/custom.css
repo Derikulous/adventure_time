@@ -153,3 +153,11 @@ font-weight: 10;
   background-color: #005470;
   border-color: #005470;
 }
+
+.fa-star {
+  color: yellow;
+}
+
+.fa-heart {
+  color: red;
+}

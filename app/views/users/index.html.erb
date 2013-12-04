@@ -21,7 +21,7 @@
                   <% count += 1 %>
                   <td style="border:none"><%= gravatar_for user %></td>
                   <td style="border:none"><h5><%= link_to user.email, user_path(user) %></h5></td>
-                  <td style="border:none"><h4><%= user.experience %></h4></td>
+                  <td style="border:none"><h4><%= user.experience %> <i class='fa fa-star'></i></h4></td>
               </tr>
               <% end %>
               </tr>
