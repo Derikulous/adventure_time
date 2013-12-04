@@ -23,7 +23,7 @@ Take more exams<br>
 
 Screenshots of the application below:
 
-![landing_page](splash_page.png)
+![landing_page](assets/splash_page.png "Splash page")
 
 ## Authors
 
