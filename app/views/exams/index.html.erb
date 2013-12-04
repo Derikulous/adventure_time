@@ -5,9 +5,9 @@
 
       <div class='col-lg-4'>
         <div class='well'>
-          <h3><%= exam.name %></h3>
+          <h4><%= exam.name %></h4>
           <h4>Level: <%= exam.level %> </h4>
-          <h4>Rewards:</h4>
+          <h4><b>Rewards:</b></h4>
           <h4>Experience: <%= exam.experience %> </h4>
           <% if current_user.present? %>
             <h4>Score: <%= exam.generate_score(current_user) %> </h4>
