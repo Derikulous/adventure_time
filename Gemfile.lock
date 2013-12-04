@@ -168,9 +168,12 @@ GEM
     rdoc (3.12.2)
       json (~> 1.4)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     rmagick (2.13.2)
 >>>>>>> 0668ea9a1568c25bac467d16e9ddd9f129a16ff7
+=======
+>>>>>>> 7656c95b9137c3b57c8fb2d771bf5a4acacf44a2
     sass (3.2.12)
     sass-rails (4.0.1)
       railties (>= 4.0.0, < 5.0)
@@ -221,9 +224,12 @@ PLATFORMS
 DEPENDENCIES
   anjlab-bootstrap-rails (~> 3.0.2.0)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   carrierwave
 >>>>>>> 0668ea9a1568c25bac467d16e9ddd9f129a16ff7
+=======
+>>>>>>> 7656c95b9137c3b57c8fb2d771bf5a4acacf44a2
   coffee-rails (~> 4.0.0)
   devise
   figaro
