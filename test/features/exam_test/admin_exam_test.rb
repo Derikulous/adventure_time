@@ -1,7 +1,33 @@
 require 'test_helper'
 
 feature "admin exams for Brook and Ivans adventure" do
-  scenario "admin tries to create a exam" do
+  scenario "admin tries to create a exam unsuccessfully" do
+
+    # navigate exams page
+    visit root_path
+
+    # admin signs in
+    sign_in(:one)
+
+    # admin must sign in properly
+    page.text.must_include 'Signed in successfully'
+    page.text.wont_include "Sign In"
+
+    # click on new exam
+    click_on 'Create Exam'
+
+    # If user clicks on creat exam without info
+    click_on 'Submit'
+
+    # Then the page renders back to new
+    page.text.must_include "4 errors prohibited this exam from being saved:"
+    page.text.must_include "Questions content can't be blank"
+    page.text.must_include "Questions answers can't be blank"
+    page.text.must_include "Experience is not a number"
+    page.text.must_include "Name can't be blank"
+  end
+
+    scenario "admin successfully creates an exam" do
 
     # navigate exams page
     visit root_path

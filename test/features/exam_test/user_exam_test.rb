@@ -120,4 +120,17 @@ feature "A user takes an Brook and Ivans adventure exam" do
     # Exam page must show score
     page.text.must_include '0.0%'
   end
+
+  scenario 'A user with 0 life takes an exam and fails' do
+    # A fail user signs in and visits their profile page
+    visit root_path
+    sign_in(:three)
+    click_on "Profile"
+    page.text.must_include "Lives: 0"
+
+    # The user takes an exam
+    visit exams_path
+    click_on 'Begin Quest'
+    page.text.must_include 'GAME OVER'
+  end
 end

@@ -32,21 +32,7 @@ class Exam < ActiveRecord::Base
   end
 
   def generate_experience(user)
-    experience = 0
-    t = user.questions & questions
-    if t.size == 0
-      return 'none'
-    else
-      t.each do |a|
-        s = a.solutions & user.solutions
-        s.each do |d|
-          if d.correct?
-            experience+=10
-          end
-        end
-      end
-      return ((experience / questions.size))
-    end
+    (self.experience * (generate_score(user) / 100)).round(1)
   end
 
   def generate_progress(user)
