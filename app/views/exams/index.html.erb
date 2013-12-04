@@ -8,9 +8,9 @@
           <h3><%= exam.name %></h3>
           <h4>Level: <%= exam.level %> </h4>
           <h4>Rewards:</h4>
+          <h4>Experience: <%= exam.experience %> </h4>
           <% if current_user.present? %>
             <h4>Score: <%= exam.generate_score(current_user) %> </h4>
-            <h4>Experience: <%= exam.experience %> </h4>
             <div class ="text-center">
               <% if exam.next_question(current_user) %>
               <%= link_to 'Begin Quest', new_question_solution_path(exam.questions.first), class: "btn btn-info" %>
