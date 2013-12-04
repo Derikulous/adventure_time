@@ -22,7 +22,7 @@
     		</div>
     	</div>
     </div>
-      <div class="panel-body">
+      <div class="panel-body" id="fade">
 			<div class="row">
 				<div class="col-md-12">
 					<div class="pull-left">
@@ -34,8 +34,8 @@
 				</div>
 			</div>
 		<div class="row">
-			<h3><%= @question.content %></h3>
 			<div class="col-md-12">
+				<h3><%= @question.content %></h3>
 				<%= render 'form' %>
       </div>
 		</div>
