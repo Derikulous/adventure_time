@@ -5,11 +5,7 @@ class ExamsController < ApplicationController
   # GET /exams
   # GET /exams.json
   def index
-    if current_user.present?
-      @exams = Exam.where(level: current_user.level)
-    else
-      @exams = Exam.where(level: 1)
-    end
+    @exams = policy_scope(Exam)
   end
 
   # GET /exams/1

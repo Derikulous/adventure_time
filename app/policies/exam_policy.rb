@@ -21,8 +21,10 @@ class ExamPolicy < ApplicationPolicy
     def resolve
       if user.present? && user.admin?
         scope.all
+      elsif user.present?
+        scope.where(level: 1..user.level)
       else
-        scope.where(:approved => true)
+        scope.where(level: 1)
       end
     end
   end
