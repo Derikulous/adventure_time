@@ -22,8 +22,6 @@ gem 'font-awesome-rails'
 gem 'formtastic'
 gem 'minitest-focus'
 gem 'minitest-colorize'
-gem 'carrierwave'
-gem 'rmagick'
 
 
 group :doc do
