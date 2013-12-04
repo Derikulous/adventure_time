@@ -22,7 +22,7 @@ Take more exams<br>
 
 Screenshots of your application below:
 
-![landing_page]()
+![landing_page](splash_page.png)
 
 ## Authors
 
