@@ -1,4 +1,5 @@
 # Adventure Time
+[![Code Climate](https://codeclimate.com/repos/529f9d21c7f3a36de60006af/badges/50f0bd45671edb541cb4/gpa.png)](https://codeclimate.com/repos/529f9d21c7f3a36de60006af/feed)
 
 By [Derik, James, Thanh]
 
