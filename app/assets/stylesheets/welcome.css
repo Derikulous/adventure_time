@@ -26,6 +26,11 @@ body {
   background-size: cover;
 }
 
+#profilebg {
+  background: url(profilebg.png) no-repeat center center fixed;
+  background-size: cover;
+}
+
 #fade {
     opacity: 0;
     margin-top: 25px;
