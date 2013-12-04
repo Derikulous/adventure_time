@@ -128,12 +128,14 @@ font-weight: 10;
   background-color: #459827;
 }
 
-.icon-github {
+.fa-github {
   color: #ffffff;
-  font-size: 22px;
+  font-size: 24px;
+  padding: 8px;
 }
 
-.icon-linkedin {
+.fa-linkedin {
   color: #ffffff;
-  font-size: 22px;
+  font-size: 24px;
+  padding: 8px;
 }
