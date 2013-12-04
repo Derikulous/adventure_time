@@ -6,6 +6,7 @@
 				<center><%= image_tag "brook/brook_win.png", :class => "img-responsive" %></center>
 				<h4>Your Score: <%= @score.to_s + "%" %> </h4>
         <h4>Experience Gained: <%= @experience %> </h4>
+        <h4><%= @level %> </h4>
         <%= link_to 'Continue', exams_path, class: "btn btn-primary" %>
 			</div>
 		</div>

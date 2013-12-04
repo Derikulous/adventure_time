@@ -5,7 +5,7 @@ class ExamsController < ApplicationController
   # GET /exams
   # GET /exams.json
   def index
-    @exams = Exam.all
+    @exams = policy_scope(Exam)
   end
 
   # GET /exams/1
