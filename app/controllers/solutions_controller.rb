@@ -42,7 +42,6 @@ class SolutionsController < ApplicationController
           @solution.user.experience += @solution.question.exam.generate_experience(current_user)
           @solution.user.save
           generate_victory_message
-          binding.pry
           if @solution.user.update_level
             flash[:notice] = "You have gained a level"
             @level = "Level Gained! You are now level: " + @solution.user.level.to_s

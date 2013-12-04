@@ -76,6 +76,11 @@ font-weight: 10;
   height: 40px;
 }
 
+.profile-grav {
+  border-radius: 50%;
+}
+
+
 .border-none {
   border: none;
 }
