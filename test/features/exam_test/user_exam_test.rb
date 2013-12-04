@@ -34,7 +34,7 @@ feature "A user takes an Brook and Ivans adventure exam" do
     visit exams_path
 
     # click on edit exam
-    click_on 'Take Exam'
+    click_on 'Begin Quest'
 
     # Exam must show content
     page.text.must_include 'Which of the following is a mammal?'
@@ -46,17 +46,16 @@ feature "A user takes an Brook and Ivans adventure exam" do
     click_on 'Next Question'
 
     # Flash message is shown
-    page.text.wont_include "Try again, sucker! Mwahaha!"
-    page.text.wont_include 'Close Victory!'
-    page.text.must_include "Oh, that's unexpected. You're correct."
-    page.text.must_include 'Perfect Victory!'
+    page.text.must_include 'Barely Made It!'
 
     # Exam page must show score
-    page.text.must_include '100'
+    page.text.must_include 'Continue'
+    click_on 'Continue'
 
     # now when the user goes to the exams path, the exam cannot be taken again
+    page.text.must_include '100'
     visit exams_path
-    page.text.must_include 'Taken'
+    page.text.must_include 'Quest completed'
   end
 
   scenario "user tries to edit exam" do
@@ -95,7 +94,7 @@ feature "A user takes an Brook and Ivans adventure exam" do
     page.text.wont_include 'Destroy'
   end
 
-  scenario 'A user takes an exam' do
+  scenario 'A user takes an exam and fails' do
     # navigate to the users page
     visit root_path
 
@@ -104,10 +103,9 @@ feature "A user takes an Brook and Ivans adventure exam" do
 
     # visit exam path
     visit exams_path
-    click_on 'Take Exam'
+    click_on 'Begin Quest'
 
     # Exam must show content
-    save_and_open_page
     page.text.must_include 'Which of the following is a mammal?'
 
     # Select an answer
@@ -117,11 +115,9 @@ feature "A user takes an Brook and Ivans adventure exam" do
     click_on 'Next Question'
 
     # flash message is shown
-    page.text.must_include "Try again, sucker! Mwahaha!"
-    page.text.must_include 'Close Victory!'
+    page.text.must_include 'Barely Made It!'
 
     # Exam page must show score
-    page.text.wont_include '100'
     page.text.must_include '0.0%'
   end
 end
