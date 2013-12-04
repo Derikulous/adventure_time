@@ -21,7 +21,7 @@ Take more exams<br>
 
 ## Information
 
-Screenshots of your application below:
+Screenshots of the application below:
 
 ![landing_page](splash_page.png)
 
