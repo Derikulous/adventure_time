@@ -10,24 +10,16 @@ body {
   padding: 5px 15px;
 }
 #mountain {
-  background: url(map.png) no-repeat center center fixed;
+  background: url(https://s3-us-west-2.amazonaws.com/brookandivanadventure/images/map.jpg) no-repeat center center fixed;
   background-size: cover;
 }
-.chatbubble {
-	background-image: url(chatbubble.png);
-	background-size: 100% 100%;
-	padding: 10px 0px 10px 40px;
-  text-align: center;
-	vertical-align: center;
-}
-
 #forest {
-  background: url(forest.jpeg) no-repeat center center fixed;
+  background: url(https://s3-us-west-2.amazonaws.com/brookandivanadventure/images/forest.jpeg) no-repeat center center fixed;
   background-size: cover;
 }
 
 #profilebg {
-  background: url(profilebg.png) no-repeat center center fixed;
+  background: url(https://s3-us-west-2.amazonaws.com/brookandivanadventure/images/profilebg.jpg) no-repeat center center fixed;
   background-size: cover;
 }
 
