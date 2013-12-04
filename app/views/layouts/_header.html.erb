@@ -42,8 +42,8 @@
           </div>
         </div>
         <!-- Button trigger modal -->
-        <li class="create-account">
-          <%= link_to "Create Account", "#signup", "data-toggle" => "modal", :class => "btn btn-primary" %></li>
+        <li>
+          <%= link_to "Create Account", "#signup", "data-toggle" => "modal", :class => "btn btn-primary", :id => "create-account" %></li>
         <div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="signinLabel" aria-hidden="true">
           <div class="modal-dialog">
             <%= render "layouts/modals/signup" %>
@@ -54,3 +54,4 @@
     </div>
   </div>
 </div>
+

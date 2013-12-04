@@ -46,7 +46,7 @@ feature "A user takes an Brook and Ivans adventure exam" do
     click_on 'Next Question'
 
     # Flash message is shown
-    page.text.must_include 'Barely Made It!'
+    page.text.must_include 'Perfect Victory!'
 
     # Exam page must show score
     page.text.must_include 'Continue'
