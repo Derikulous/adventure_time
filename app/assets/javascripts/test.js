@@ -1,0 +1,1 @@
+$("#fade p").addClass("load");
