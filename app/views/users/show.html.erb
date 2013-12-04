@@ -1,7 +1,7 @@
 <div class="container">
-  <div class="well-test col-md-6">
+  <div class="col-md-6">
 
-    <%= gravatar_for @user %>
+  <%= gravatar_for @user %>
 
     <div><h1><%= @user.name %></h1></div>
     <div><h4>Email: <%= @user.email %></h4></div>
@@ -11,33 +11,35 @@
     <%= link_to "Change Avatar", 'http://en.gravatar.com/', class: "btn btn-primary" %>
     <br/ >
     <br/ >
-    <h3>Report Card</h3>
-    <div class="bs-example table-responsive">
-      <table class="table table-striped table-bordered table-hover">
-        <thead>
-          <tr>
-            <th>Question</th>
-            <th>Test Name</th>
-            <% if current_user.present? %>
-            <th>Score</th>
-            <% end %>
-          </tr>
-        </thead>
-        <% @user.solutions.each do |solution| %>
-        <tbody>
-          <tr>
-            <td><%= solution.question.exam.name %></td>
-            <td><%= solution.question.content %></td>
-            <td><% if solution.correct %>
-              Correct<br/ >
-              <% else %>
-              Incorrect<br/ >
-            </td>
-            <% end %>
-            <% end %>
-          </tr>
-        </tbody>
-      </table>
+    <div class="well">
+      <h3>Report Card</h3>
+      <div class="bs-example table-responsive">
+        <table class="table table-striped table-bordered table-hover">
+          <thead>
+            <tr>
+              <th>Question</th>
+              <th>Test Name</th>
+              <% if current_user.present? %>
+              <th>Score</th>
+              <% end %>
+            </tr>
+          </thead>
+          <% @user.solutions.each do |solution| %>
+          <tbody>
+            <tr>
+              <td><%= solution.question.exam.name %></td>
+              <td><%= solution.question.content %></td>
+              <td><% if solution.correct %>
+                Correct<br/ >
+                <% else %>
+                Incorrect<br/ >
+              </td>
+              <% end %>
+              <% end %>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>

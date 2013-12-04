@@ -70,12 +70,6 @@ font-weight: 10;
   text-align: center;
 }
 
-.circle-grav {
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-}
-
 .border-none {
   border: none;
 }
