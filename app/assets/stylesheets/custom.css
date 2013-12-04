@@ -78,3 +78,62 @@ font-weight: 10;
 .border-none {
   border: none;
 }
+
+.btn-github {
+  display: block;
+  width: 80%;
+  padding-right: 0;
+  padding-left: 0;
+  background-color: #c0c0c0;
+  color: #ffffff;
+  margin: auto;
+  left: 0;
+  right: 0;
+  margin-top: 8px;
+}
+
+.btn-github:hover {
+  color: #ffffff;
+  text-decoration: none;
+  background: #818181;
+}
+
+.btn-linkedin {
+  display: block;
+  width: 80%;
+  padding-right: 0;
+  padding-left: 0;
+  background-color: #007bb6;
+  color: #ffffff;
+  margin: auto;
+  left: 0;
+  right: 0;
+  margin-top: 8px;
+}
+
+.btn-linkedin:hover {
+  color: #ffffff;
+  text-decoration: none;
+  background: #00557E;
+}
+
+.btn-block {
+  background-color: #57c131;
+  color: #ffffff;
+  margin-top: 8px;
+}
+
+.btn-block:hover {
+  color: #ffffff;
+  background-color: #459827;
+}
+
+.icon-github {
+  color: #ffffff;
+  font-size: 22px;
+}
+
+.icon-linkedin {
+  color: #ffffff;
+  font-size: 22px;
+}
