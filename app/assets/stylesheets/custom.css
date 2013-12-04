@@ -147,3 +147,9 @@ font-weight: 10;
   overflow: hidden;
   background-color: #e5e5e5;
 }
+
+#create-account:hover {
+  color: #ffffff;
+  background-color: #005470;
+  border-color: #005470;
+}

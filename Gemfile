@@ -25,6 +25,7 @@ gem 'minitest-colorize'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'asset_sync'
+gem 'unf'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
