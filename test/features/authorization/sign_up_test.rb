@@ -38,7 +38,7 @@ feature 'As a site visitor, I want to be able to sign up to use the site by crea
       click_on 'Sign up'
     end
 
-    # Then I should be signed up
+    # Then I should not be signed up
     page.text.must_include "Email can't be blank"
   end
 end

@@ -42,7 +42,6 @@ class ExamsController < ApplicationController
         format.json { render action: 'show', status: :created, location: @exam }
       else
         format.html { render action: 'new' }
-        format.json { render json: @exam.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -57,7 +56,6 @@ class ExamsController < ApplicationController
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
-        format.json { render json: @exam.errors, status: :unprocessable_entity }
       end
     end
   end
