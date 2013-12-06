@@ -21,9 +21,9 @@ Take more exams<br>
 
 ## Information
 
-Screenshots of your application below:
+Screenshots of the application below:
 
-![landing_page]()
+![landing_page](/public/splash_page.png?raw=true "Splash page")
 
 ## Authors
 
