@@ -22,6 +22,7 @@ gem 'font-awesome-rails'
 gem 'formtastic'
 gem 'minitest-focus'
 gem 'minitest-colorize'
+gem 'brakeman'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
