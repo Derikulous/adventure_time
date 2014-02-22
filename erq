@@ -1,0 +1,55 @@
+=> {[31m[1;31m"[0m[31mprovider[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mlinkedin[1;31m"[0m[31m[0m,
+ [31m[1;31m"[0m[31muid[1;31m"[0m[31m[0m=>[1;36mnil[0m,
+ [31m[1;31m"[0m[31minfo[1;31m"[0m[31m[0m=>
+  {[31m[1;31m"[0m[31mname[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mJames Chuang[1;31m"[0m[31m[0m,
+   [31m[1;31m"[0m[31memail[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mjameschuang13@gmail.com[1;31m"[0m[31m[0m,
+   [31m[1;31m"[0m[31mnickname[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mJames Chuang[1;31m"[0m[31m[0m,
+   [31m[1;31m"[0m[31mfirst_name[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mJames[1;31m"[0m[31m[0m,
+   [31m[1;31m"[0m[31mlast_name[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mChuang[1;31m"[0m[31m[0m,
+   [31m[1;31m"[0m[31mlocation[1;31m"[0m[31m[0m=>[1;36mnil[0m,
+   [31m[1;31m"[0m[31mdescription[1;31m"[0m[31m[0m=>[1;36mnil[0m,
+   [31m[1;31m"[0m[31mimage[1;31m"[0m[31m[0m=>[1;36mnil[0m,
+   [31m[1;31m"[0m[31mphone[1;31m"[0m[31m[0m=>[1;36mnil[0m,
+   [31m[1;31m"[0m[31mheadline[1;31m"[0m[31m[0m=>[1;36mnil[0m,
+   [31m[1;31m"[0m[31mindustry[1;31m"[0m[31m[0m=>[1;36mnil[0m,
+   [31m[1;31m"[0m[31murls[1;31m"[0m[31m[0m=>{[31m[1;31m"[0m[31mpublic_profile[1;31m"[0m[31m[0m=>[1;36mnil[0m}},
+ [31m[1;31m"[0m[31mcredentials[1;31m"[0m[31m[0m=>
+  {[31m[1;31m"[0m[31mtoken[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mfc2f1dfc-d772-4c61-ba1b-74dd4475702a[1;31m"[0m[31m[0m,
+   [31m[1;31m"[0m[31msecret[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31m104bd61b-2e7e-451c-ac36-8697d4492b7c[1;31m"[0m[31m[0m},
+ [31m[1;31m"[0m[31mextra[1;31m"[0m[31m[0m=>
+  {[31m[1;31m"[0m[31maccess_token[1;31m"[0m[31m[0m=>
+    [31m[1;31m#<[0m[31mOAuth::AccessToken:0x00000003d64b30
+     @consumer=
+      #<OAuth::Consumer:0x000000037dd3b0
+       @http=#<Net::HTTP api.linkedin.com:443 open=false>,
+       @http_method=:post,
+       @key="ipnlupzbdt02",
+       @options=
+        {:signature_method=>"HMAC-SHA1",
+         :request_token_path=[1;31m>[0m[31m[0m[31m[1;31m"[0m[31m/uas/oauth/requestToken[1;31m"[0m[31m[0m,
+         [33m:authorize_path[0m=>[31m[1;31m"[0m[31m/oauth/authorize[1;31m"[0m[31m[0m,
+         [33m:access_token_path[0m=>[31m[1;31m"[0m[31m/uas/oauth/accessToken[1;31m"[0m[31m[0m,
+         [33m:proxy[0m=>[1;36mnil[0m,
+         [33m:scheme[0m=>[33m:header[0m,
+         [33m:http_method[0m=>[33m:post[0m,
+         [33m:oauth_version[0m=>[31m[1;31m"[0m[31m1.0[1;31m"[0m[31m[0m,
+         [33m:site[0m=>[31m[1;31m"[0m[31mhttps://api.linkedin.com[1;31m"[0m[31m[0m,
+         [33m:authorize_url[0m=>[31m[1;31m"[0m[31mhttps://www.linkedin.com/uas/oauth/authenticate[1;31m"[0m[31m[0m},
+       @secret=[31m[1;31m"[0m[31mZktLJ82cPcdRGr4d[1;31m"[0m[31m[0m,
+       @uri=[31m[1;31m#<[0m[31mURI::HTTPS:0x00000003d77708 URL:https://api.linkedin.com[1;31m>[0m[31m[0m>,
+     @params=
+      {[33m:oauth_token[0m=>[31m[1;31m"[0m[31mfc2f1dfc-d772-4c61-ba1b-74dd4475702a[1;31m"[0m[31m[0m,
+       [31m[1;31m"[0m[31moauth_token[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mfc2f1dfc-d772-4c61-ba1b-74dd4475702a[1;31m"[0m[31m[0m,
+       [33m:oauth_token_secret[0m=>[31m[1;31m"[0m[31m104bd61b-2e7e-451c-ac36-8697d4492b7c[1;31m"[0m[31m[0m,
+       [31m[1;31m"[0m[31moauth_token_secret[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31m104bd61b-2e7e-451c-ac36-8697d4492b7c[1;31m"[0m[31m[0m,
+       [33m:oauth_expires_in[0m=>[31m[1;31m"[0m[31m5183999[1;31m"[0m[31m[0m,
+       [31m[1;31m"[0m[31moauth_expires_in[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31m5183999[1;31m"[0m[31m[0m,
+       [33m:oauth_authorization_expires_in[0m=>[31m[1;31m"[0m[31m5183999[1;31m"[0m[31m[0m,
+       [31m[1;31m"[0m[31moauth_authorization_expires_in[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31m5183999[1;31m"[0m[31m[0m},
+     @response=[31m[1;31m#<[0m[31mNet::HTTPOK 200 OK readbody=true[1;31m>[0m[31m[0m,
+     @secret=[31m[1;31m"[0m[31m104bd61b-2e7e-451c-ac36-8697d4492b7c[1;31m"[0m[31m[0m,
+     @token=[31m[1;31m"[0m[31mfc2f1dfc-d772-4c61-ba1b-74dd4475702a[1;31m"[0m[31m[0m>,
+   [31m[1;31m"[0m[31mraw_info[1;31m"[0m[31m[0m=>
+    {[31m[1;31m"[0m[31memailAddress[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mjameschuang13@gmail.com[1;31m"[0m[31m[0m,
+     [31m[1;31m"[0m[31mfirstName[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mJames[1;31m"[0m[31m[0m,
+     [31m[1;31m"[0m[31mlastName[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mChuang[1;31m"[0m[31m[0m}}}[0m
