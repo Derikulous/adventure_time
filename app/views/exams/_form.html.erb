@@ -34,7 +34,7 @@
     <%= render 'question_fields', f: builder %>
     <% end %>
 
-<%= link_to_add_fields "Add Question", f, :questions %>
+    <%= link_to_add_fields "Add Question", f, :questions %>
 
     <div class="actions">
       <%= link_to 'Back', exams_path, class: "btn btn-default form-back" %><%= f.submit "Submit", class: "btn btn-primary form-back" %>
