@@ -36,4 +36,16 @@ feature 'As a user, I want a profile page' do
     click_on "Update"
     page.text.must_include 'Yes Name'
   end
+
+  scenario 'users cannot edit test of other users' do
+    sign_in(:two)
+
+    visit '/users/1/'
+
+    page.text.wont_include 'Update Profile'
+
+    visit '/users/1/edit'
+
+    page.text.should_include 'Not Authorized'
+  end
 end
