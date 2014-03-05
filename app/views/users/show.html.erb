@@ -9,7 +9,7 @@
       <div><h4>Level: <%= @user.level %></h4></div>
       <div><h4>Experience: <%= @user.experience %> <i class='fa fa-star'></i></h4></div>
       <div><h4>Lives: <%= @user.life %> <i class='fa fa-heart'></i></h4><br/ >
-      <% if current_user.present? %>
+      <% if current_user.present? && current_user == @user %>
         <%= link_to "Update Profile", edit_user_path, class: "btn btn-info" %>
         <%= link_to "Change Avatar", 'http://en.gravatar.com/', class: "btn btn-primary" %>
         <br/ >

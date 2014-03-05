@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    check_user
     @user = User.find(params[:id])
   end
 
@@ -43,5 +44,12 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email, :experience, :level, :life)
+  end
+
+  def check_user
+    @user = User.find(params[:id])
+    if current_user != @user
+      redirect_to @user, notice: 'Not Authorized to edit profile of this user'
+    end
   end
 end

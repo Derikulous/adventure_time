@@ -3,6 +3,8 @@ class Solution < ActiveRecord::Base
   belongs_to :user
   belongs_to :report
 
+  validates :user, :uniqueness => {:scope => :question}
+
 
   def check_answer(q)
     if q == find_answer.to_s

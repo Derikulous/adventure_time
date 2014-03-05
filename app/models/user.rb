@@ -22,7 +22,6 @@ class User < ActiveRecord::Base
   end
 
   def self.new_with_session(params, session)
-    binding.pry
     if session["devise.user_attributes"]
       new session["devise.user_attributes"] do |user|
         user.attributes = params
